@@ -13,6 +13,7 @@ namespace Fundamentos2024
             //SOLAMENTE ESCRIBIREMOS AQUI POR AHORA
             //TODO EN UNA CLASE PARA REFERIRSE A LOS OBJETOS UTILIZAMOS
             //LA PALABRA this (Clase en la que estamos programando (FORM))
+            this.txtNombre.Text = "Hola mundo";
             this.txtNombre.Location = new Point(40, 50);
             this.txtNombre.Text = "Soy un texto";
             this.txtNombre.TextAlign = HorizontalAlignment.Center;
