@@ -66,6 +66,7 @@
             // 
             // txtNumero
             // 
+            txtNumero.ForeColor = Color.Red;
             txtNumero.Location = new Point(420, 57);
             txtNumero.Name = "txtNumero";
             txtNumero.Size = new Size(100, 35);
@@ -80,6 +81,7 @@
             btnAgregarNumero.TabIndex = 4;
             btnAgregarNumero.Text = "Agregar número";
             btnAgregarNumero.UseVisualStyleBackColor = true;
+            btnAgregarNumero.Click += btnAgregarNumero_Click;
             // 
             // btnSumarNumeros
             // 
@@ -89,6 +91,7 @@
             btnSumarNumeros.TabIndex = 5;
             btnSumarNumeros.Text = "Sumar números colección";
             btnSumarNumeros.UseVisualStyleBackColor = true;
+            btnSumarNumeros.Click += btnSumarNumeros_Click;
             // 
             // lblSuma
             // 
