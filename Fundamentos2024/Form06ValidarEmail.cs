@@ -30,7 +30,49 @@ namespace Fundamentos2024
                 this.lblMensaje.Text = "Mail correcto";
             }
             //VUESTROS IF A PARTIR DE AQUI
-
+            if (email.StartsWith("@") == true)
+            {
+                this.lblMensaje.Text = "Email con @ al inicio";
+            }
+            else
+            {
+                this.lblMensaje.Text = "Mail correcto";
+            }
+            if (email.IndexOf("@") == 0)
+            {
+                this.lblMensaje.Text = "Email con @ al inicio";
+            }
+            else
+            {
+                this.lblMensaje.Text = "Mail correcto";
+            }
+            if (email.EndsWith("@") == true)
+            {
+                this.lblMensaje.Text = "@ al final del Email";
+            }
+            else
+            {
+                this.lblMensaje.Text = "Mail correcto";
+            }
+            if (email.IndexOf("@") == email.Length - 1)
+            {
+                this.lblMensaje.Text = "Email con @ al final";
+            }
+            else
+            {
+                this.lblMensaje.Text = "Mail correcto";
+            }
+            //pacoserranox@gmail.com
+            int ultimoPunto = email.LastIndexOf(".");
+            string dominio = email.Substring(ultimoPunto + 1);
+            if (dominio.Length >= 2 && dominio.Length <= 4)
+            {
+                this.lblMensaje.Text = "Mail correcto";
+            }
+            else
+            {
+                this.lblMensaje.Text = "El dominio debe ser de 2 a 4 caracteres";
+            }
         }
     }
 }
