@@ -33,8 +33,9 @@
             label2 = new Label();
             txtNumero = new TextBox();
             btnAgregarNumero = new Button();
-            btnSumarNumeros = new Button();
+            btnSumarNumerosIndice = new Button();
             lblSuma = new Label();
+            btnSumarNumerosReferencia = new Button();
             SuspendLayout();
             // 
             // label1
@@ -83,33 +84,44 @@
             btnAgregarNumero.UseVisualStyleBackColor = true;
             btnAgregarNumero.Click += btnAgregarNumero_Click;
             // 
-            // btnSumarNumeros
+            // btnSumarNumerosIndice
             // 
-            btnSumarNumeros.Location = new Point(379, 175);
-            btnSumarNumeros.Name = "btnSumarNumeros";
-            btnSumarNumeros.Size = new Size(210, 92);
-            btnSumarNumeros.TabIndex = 5;
-            btnSumarNumeros.Text = "Sumar números colección";
-            btnSumarNumeros.UseVisualStyleBackColor = true;
-            btnSumarNumeros.Click += btnSumarNumeros_Click;
+            btnSumarNumerosIndice.Location = new Point(379, 175);
+            btnSumarNumerosIndice.Name = "btnSumarNumerosIndice";
+            btnSumarNumerosIndice.Size = new Size(210, 92);
+            btnSumarNumerosIndice.TabIndex = 5;
+            btnSumarNumerosIndice.Text = "Sumar números colección INDICE";
+            btnSumarNumerosIndice.UseVisualStyleBackColor = true;
+            btnSumarNumerosIndice.Click += btnSumarNumeros_Click;
             // 
             // lblSuma
             // 
             lblSuma.AutoSize = true;
             lblSuma.ForeColor = Color.Blue;
-            lblSuma.Location = new Point(380, 302);
+            lblSuma.Location = new Point(41, 390);
             lblSuma.Name = "lblSuma";
             lblSuma.Size = new Size(87, 30);
             lblSuma.TabIndex = 6;
             lblSuma.Text = "lblSuma";
             // 
+            // btnSumarNumerosReferencia
+            // 
+            btnSumarNumerosReferencia.Location = new Point(378, 286);
+            btnSumarNumerosReferencia.Name = "btnSumarNumerosReferencia";
+            btnSumarNumerosReferencia.Size = new Size(210, 122);
+            btnSumarNumerosReferencia.TabIndex = 7;
+            btnSumarNumerosReferencia.Text = "Sumar números colección REFERENCIA";
+            btnSumarNumerosReferencia.UseVisualStyleBackColor = true;
+            btnSumarNumerosReferencia.Click += btnSumarNumerosReferencia_Click;
+            // 
             // Form08SumaNumerosListbox
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(628, 400);
+            ClientSize = new Size(628, 464);
+            Controls.Add(btnSumarNumerosReferencia);
             Controls.Add(lblSuma);
-            Controls.Add(btnSumarNumeros);
+            Controls.Add(btnSumarNumerosIndice);
             Controls.Add(btnAgregarNumero);
             Controls.Add(txtNumero);
             Controls.Add(label2);
@@ -130,7 +142,8 @@
         private Label label2;
         private TextBox txtNumero;
         private Button btnAgregarNumero;
-        private Button btnSumarNumeros;
+        private Button btnSumarNumerosIndice;
         private Label lblSuma;
+        private Button btnSumarNumerosReferencia;
     }
 }

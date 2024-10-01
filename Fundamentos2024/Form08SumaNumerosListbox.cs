@@ -43,5 +43,19 @@ namespace Fundamentos2024
             }
             this.lblSuma.Text = suma.ToString();
         }
+
+        private void btnSumarNumerosReferencia_Click(object sender, EventArgs e)
+        {
+            //UNA VARIABLE PARA ALMACENAR LA SUMA
+            int suma = 0;
+            //SOLAMENTE NECESITAMOS SABER QUE TIPO DE ELEMENTOS (DATO)
+            //VAMOS A RECORRER
+            foreach (int numero in this.lstNumeros.Items)
+            {
+                //VAMOS SUMANDO CADA VALOR DE LA VARIABLE DE REFERENCIA (numero)
+                suma = suma + numero;
+            }
+            this.lblSuma.Text = suma.ToString();
+        }
     }
 }
