@@ -15,6 +15,9 @@ namespace Fundamentos2024
         public Form03DateTime()
         {
             InitializeComponent();
+            char caracter = '@';
+
+
             //QUIERO PONER LA FECHA ACTUAL EN LA CAJA
             DateTime fecha = DateTime.Now;
             this.txtFechaActual.Text = fecha.ToString();
