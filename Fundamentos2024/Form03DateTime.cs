@@ -40,6 +40,18 @@ namespace Fundamentos2024
             //CAPTURAMOS LA FECHA ACTUAL DE LA CAJA
             DateTime fecha = DateTime.Parse(this.txtFechaActual.Text);
             int incremento = int.Parse(this.txtIncremento.Text);
+            if (this.rdbDias.Checked == true)
+            {
+                fecha = fecha.AddDays(incremento);
+            }else if (this.rdbAnyos.Checked == true)
+            {
+                fecha = fecha.AddYears(incremento);
+            }
+            else
+            {
+                fecha = fecha.AddMonths(incremento);
+            }
+            this.txtNuevaFecha.Text = fecha.ToString();
         }
     }
 }
