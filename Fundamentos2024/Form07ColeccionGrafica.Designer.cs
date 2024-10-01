@@ -56,6 +56,7 @@
             lstElementos.Name = "lstElementos";
             lstElementos.Size = new Size(267, 244);
             lstElementos.TabIndex = 1;
+            lstElementos.SelectedIndexChanged += lstElementos_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -81,6 +82,7 @@
             btnInsertar.TabIndex = 4;
             btnInsertar.Text = "Insertar";
             btnInsertar.UseVisualStyleBackColor = true;
+            btnInsertar.Click += btnInsertar_Click;
             // 
             // btnEliminar
             // 
@@ -91,6 +93,7 @@
             btnEliminar.TabIndex = 5;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnBorrarTodo
             // 
@@ -100,6 +103,7 @@
             btnBorrarTodo.TabIndex = 6;
             btnBorrarTodo.Text = "Borrar todo";
             btnBorrarTodo.UseVisualStyleBackColor = true;
+            btnBorrarTodo.Click += btnBorrarTodo_Click;
             // 
             // lblItemSeleccionado
             // 
