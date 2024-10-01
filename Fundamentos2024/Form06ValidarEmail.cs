@@ -30,6 +30,7 @@ namespace Fundamentos2024
                 this.lblMensaje.Text = "Mail correcto";
             }
             //VUESTROS IF A PARTIR DE AQUI
+
         }
     }
 }
