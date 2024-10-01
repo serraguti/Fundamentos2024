@@ -19,6 +19,8 @@ namespace Fundamentos2024
 
         private void btnSumar_Click(object sender, EventArgs e)
         {
+            //CAPTURAMOS EL TEXTO DE LA CAJA DE NUMEROS
+            string textoSuma = this.txtNumeros.Text;
 
         }
     }
