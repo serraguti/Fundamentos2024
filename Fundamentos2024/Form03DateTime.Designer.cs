@@ -32,12 +32,12 @@
             txtFechaActual = new TextBox();
             chkCambiarFormato = new CheckBox();
             groupBox1 = new GroupBox();
-            rdbDias = new RadioButton();
-            rdbMeses = new RadioButton();
-            rdbAnyos = new RadioButton();
-            label2 = new Label();
-            txtIncremento = new TextBox();
             btnIncrementar = new Button();
+            txtIncremento = new TextBox();
+            label2 = new Label();
+            rdbAnyos = new RadioButton();
+            rdbMeses = new RadioButton();
+            rdbDias = new RadioButton();
             label3 = new Label();
             txtNuevaFecha = new TextBox();
             groupBox1.SuspendLayout();
@@ -68,6 +68,7 @@
             chkCambiarFormato.TabIndex = 2;
             chkCambiarFormato.Text = "Cambiar formato fecha";
             chkCambiarFormato.UseVisualStyleBackColor = true;
+            chkCambiarFormato.CheckedChanged += chkCambiarFormato_CheckedChanged;
             // 
             // groupBox1
             // 
@@ -84,27 +85,31 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
-            // rdbDias
+            // btnIncrementar
             // 
-            rdbDias.AutoSize = true;
-            rdbDias.Location = new Point(35, 42);
-            rdbDias.Name = "rdbDias";
-            rdbDias.Size = new Size(71, 34);
-            rdbDias.TabIndex = 0;
-            rdbDias.TabStop = true;
-            rdbDias.Text = "Días";
-            rdbDias.UseVisualStyleBackColor = true;
+            btnIncrementar.Location = new Point(268, 118);
+            btnIncrementar.Name = "btnIncrementar";
+            btnIncrementar.Size = new Size(183, 38);
+            btnIncrementar.TabIndex = 5;
+            btnIncrementar.Text = "Incrementar";
+            btnIncrementar.UseVisualStyleBackColor = true;
+            btnIncrementar.Click += btnIncrementar_Click;
             // 
-            // rdbMeses
+            // txtIncremento
             // 
-            rdbMeses.AutoSize = true;
-            rdbMeses.Location = new Point(33, 82);
-            rdbMeses.Name = "rdbMeses";
-            rdbMeses.Size = new Size(90, 34);
-            rdbMeses.TabIndex = 1;
-            rdbMeses.TabStop = true;
-            rdbMeses.Text = "Meses";
-            rdbMeses.UseVisualStyleBackColor = true;
+            txtIncremento.Location = new Point(268, 69);
+            txtIncremento.Name = "txtIncremento";
+            txtIncremento.Size = new Size(183, 35);
+            txtIncremento.TabIndex = 4;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(267, 36);
+            label2.Name = "label2";
+            label2.Size = new Size(119, 30);
+            label2.TabIndex = 3;
+            label2.Text = "Incremento";
             // 
             // rdbAnyos
             // 
@@ -117,30 +122,27 @@
             rdbAnyos.Text = "Años";
             rdbAnyos.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // rdbMeses
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(267, 36);
-            label2.Name = "label2";
-            label2.Size = new Size(119, 30);
-            label2.TabIndex = 3;
-            label2.Text = "Incremento";
+            rdbMeses.AutoSize = true;
+            rdbMeses.Location = new Point(33, 82);
+            rdbMeses.Name = "rdbMeses";
+            rdbMeses.Size = new Size(90, 34);
+            rdbMeses.TabIndex = 1;
+            rdbMeses.TabStop = true;
+            rdbMeses.Text = "Meses";
+            rdbMeses.UseVisualStyleBackColor = true;
             // 
-            // txtIncremento
+            // rdbDias
             // 
-            txtIncremento.Location = new Point(268, 69);
-            txtIncremento.Name = "txtIncremento";
-            txtIncremento.Size = new Size(183, 35);
-            txtIncremento.TabIndex = 4;
-            // 
-            // btnIncrementar
-            // 
-            btnIncrementar.Location = new Point(268, 118);
-            btnIncrementar.Name = "btnIncrementar";
-            btnIncrementar.Size = new Size(183, 38);
-            btnIncrementar.TabIndex = 5;
-            btnIncrementar.Text = "Incrementar";
-            btnIncrementar.UseVisualStyleBackColor = true;
+            rdbDias.AutoSize = true;
+            rdbDias.Location = new Point(35, 42);
+            rdbDias.Name = "rdbDias";
+            rdbDias.Size = new Size(71, 34);
+            rdbDias.TabIndex = 0;
+            rdbDias.TabStop = true;
+            rdbDias.Text = "Días";
+            rdbDias.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
