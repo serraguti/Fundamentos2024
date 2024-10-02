@@ -103,6 +103,7 @@
             txtSoloLetras.Name = "txtSoloLetras";
             txtSoloLetras.Size = new Size(329, 35);
             txtSoloLetras.TabIndex = 6;
+            txtSoloLetras.KeyPress += txtSoloLetras_KeyPress;
             // 
             // label2
             // 

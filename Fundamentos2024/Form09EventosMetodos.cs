@@ -34,7 +34,7 @@ namespace Fundamentos2024
 
         private void lblRaton_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void lblRaton_MouseMove(object sender, MouseEventArgs e)
@@ -42,6 +42,11 @@ namespace Fundamentos2024
             //SIEMPRE QUE SEA DISTINTO A EventArgs TENEMOS INFORMACION
             //QUE PODRIA SER UTIL...
             this.lblRaton.Text = "X: " + e.X + ", Y: " + e.Y;
+        }
+
+        private void txtSoloLetras_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }
