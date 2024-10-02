@@ -32,6 +32,7 @@
             button2 = new Button();
             button3 = new Button();
             lblRaton = new Label();
+            lblAccion = new Label();
             SuspendLayout();
             // 
             // button1
@@ -72,11 +73,21 @@
             lblRaton.Text = "lblRaton";
             lblRaton.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // lblAccion
+            // 
+            lblAccion.AutoSize = true;
+            lblAccion.Location = new Point(58, 300);
+            lblAccion.Name = "lblAccion";
+            lblAccion.Size = new Size(98, 30);
+            lblAccion.TabIndex = 4;
+            lblAccion.Text = "lblAccion";
+            // 
             // Form09EventosMetodos
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(829, 519);
+            Controls.Add(lblAccion);
             Controls.Add(lblRaton);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -86,6 +97,7 @@
             Name = "Form09EventosMetodos";
             Text = "Form09EventosMetodos";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -94,5 +106,6 @@
         private Button button2;
         private Button button3;
         private Label lblRaton;
+        private Label lblAccion;
     }
 }
