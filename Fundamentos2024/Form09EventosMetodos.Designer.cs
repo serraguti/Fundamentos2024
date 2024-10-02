@@ -33,11 +33,15 @@
             button3 = new Button();
             lblRaton = new Label();
             lblAccion = new Label();
+            label1 = new Label();
+            txtSoloLetras = new TextBox();
+            label2 = new Label();
+            txtSoloNumeros = new TextBox();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(55, 44);
+            button1.Location = new Point(55, 39);
             button1.Name = "button1";
             button1.Size = new Size(152, 60);
             button1.TabIndex = 0;
@@ -66,12 +70,14 @@
             // 
             lblRaton.BackColor = Color.FromArgb(192, 255, 192);
             lblRaton.BorderStyle = BorderStyle.FixedSingle;
-            lblRaton.Location = new Point(280, 39);
+            lblRaton.Location = new Point(271, 36);
             lblRaton.Name = "lblRaton";
             lblRaton.Size = new Size(496, 233);
             lblRaton.TabIndex = 3;
             lblRaton.Text = "lblRaton";
             lblRaton.TextAlign = ContentAlignment.MiddleCenter;
+            lblRaton.Click += lblRaton_Click;
+            lblRaton.MouseMove += lblRaton_MouseMove;
             // 
             // lblAccion
             // 
@@ -82,11 +88,47 @@
             lblAccion.TabIndex = 4;
             lblAccion.Text = "lblAccion";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(61, 356);
+            label1.Name = "label1";
+            label1.Size = new Size(114, 30);
+            label1.TabIndex = 5;
+            label1.Text = "Solo Letras";
+            // 
+            // txtSoloLetras
+            // 
+            txtSoloLetras.Location = new Point(225, 351);
+            txtSoloLetras.Name = "txtSoloLetras";
+            txtSoloLetras.Size = new Size(329, 35);
+            txtSoloLetras.TabIndex = 6;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(63, 423);
+            label2.Name = "label2";
+            label2.Size = new Size(144, 30);
+            label2.TabIndex = 7;
+            label2.Text = "Solo Números";
+            // 
+            // txtSoloNumeros
+            // 
+            txtSoloNumeros.Location = new Point(225, 418);
+            txtSoloNumeros.Name = "txtSoloNumeros";
+            txtSoloNumeros.Size = new Size(329, 35);
+            txtSoloNumeros.TabIndex = 8;
+            // 
             // Form09EventosMetodos
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(829, 519);
+            Controls.Add(txtSoloNumeros);
+            Controls.Add(label2);
+            Controls.Add(txtSoloLetras);
+            Controls.Add(label1);
             Controls.Add(lblAccion);
             Controls.Add(lblRaton);
             Controls.Add(button3);
@@ -107,5 +149,9 @@
         private Button button3;
         private Label lblRaton;
         private Label lblAccion;
+        private Label label1;
+        private TextBox txtSoloLetras;
+        private Label label2;
+        private TextBox txtSoloNumeros;
     }
 }
