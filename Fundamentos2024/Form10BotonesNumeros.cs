@@ -25,8 +25,17 @@ namespace Fundamentos2024
                     int aleatorio = random.Next(1, 200);
                     control.Text = aleatorio.ToString();
                     control.BackColor = Color.LightGreen;
+                    //CADA BOTON LEERA EL EVENTO SUMARNUMEROS()
+                    control.Click += SumarNumeros;
                 }
             }
+        }
+
+        void SumarNumeros(object sender, EventArgs e)
+        {
+            //CAPTURAMOS EL BOTON PULSADO MEDIANTE sender
+            Button boton = (Button)sender;
+            this.lblSuma.Text = boton.Text;
         }
     }
 }
