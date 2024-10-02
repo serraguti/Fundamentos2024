@@ -15,11 +15,17 @@ namespace Fundamentos2024
         public Form10BotonesNumeros()
         {
             InitializeComponent();
+            Random random = new Random();
             //RECORREMOS TODOS LOS BOTONES (Button) DENTRO DEL 
             //FORMULARIO MEDIANTE LA COLECCION Controls
-            foreach (Button boton in this.Controls)
+            foreach (Control control in this.Controls)
             {
-                boton.BackColor = Color.LightGreen;
+                if (control is Button)
+                {
+                    int aleatorio = random.Next(1, 200);
+                    control.Text = aleatorio.ToString();
+                    control.BackColor = Color.LightGreen;
+                }
             }
         }
     }
