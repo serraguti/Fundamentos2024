@@ -59,5 +59,14 @@ namespace Fundamentos2024
                 e.Handled = true;
             }
         }
+
+        private void txtSoloNumeros_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char teclaBorrar = (char)Keys.Back;
+            if (char.IsDigit(e.KeyChar) == false && e.KeyChar != teclaBorrar)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
