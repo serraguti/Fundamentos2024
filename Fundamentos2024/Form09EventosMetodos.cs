@@ -46,7 +46,14 @@ namespace Fundamentos2024
 
         private void txtSoloLetras_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = true;
+            //e.KeyChar CARACTER QUE HEMOS PULSADO
+            //ME PERMITE MANEJAR EL EVENTO DE FORMA MANUAL
+            //e.Handled = true;
+            //TENEMOS ALGUNA FORMA DE SABER SI UN CHAR ES LETRA O NO????
+            if (char.IsLetter(e.KeyChar) == false)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
