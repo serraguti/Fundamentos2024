@@ -31,7 +31,17 @@ namespace Fundamentos2024
         {
             Button boton = (Button)sender;
             int numeroBoton = int.Parse(boton.Text);
-            this.lstTablaMultiplicar.Items.Add(numeroBoton);
+            //LIMPIAMOS EL CONTENIDO DEL LISTBOX
+            this.lstTablaMultiplicar.Items.Clear();
+            //REALIZAMOS UN BUCLE DE 1 A 10
+            for (int i = 1; i <= 10; i++)
+            {
+                //REALIZAMOS LA OPERACION DE MULTIPLICAR EL NUMERO
+                //DEL BOTON POR LA VARIABLE i DEL BUCLE
+                int operacion = numeroBoton * i;
+                //AÑADIMOS CADA NUMERO A LA COLECCION DEL LISTBOX
+                this.lstTablaMultiplicar.Items.Add(operacion);
+            }
         }
     }
 }
