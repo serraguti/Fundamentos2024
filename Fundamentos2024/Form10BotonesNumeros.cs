@@ -35,7 +35,14 @@ namespace Fundamentos2024
         {
             //CAPTURAMOS EL BOTON PULSADO MEDIANTE sender
             Button boton = (Button)sender;
-            this.lblSuma.Text = boton.Text;
+            //CAPTURAMOS EL TEXTO NUMERICO DEL BOTON QUE HEMOS PULSADO
+            int numero = int.Parse(boton.Text);
+            //QUEREMOS IR SUMANDO CADA NUMERO AL ANTERIOR PULSADO
+            //CAPTURAMOS EL TEXTO DEL LABEL
+            int suma = int.Parse(this.lblSuma.Text);
+            //SUMAMOS EL NUMERO A LA SUMA Y LO MOSTRAMOS
+            suma = suma + numero;
+            this.lblSuma.Text = suma.ToString();
         }
     }
 }

@@ -256,9 +256,9 @@
             lblSuma.AutoSize = true;
             lblSuma.Location = new Point(48, 400);
             lblSuma.Name = "lblSuma";
-            lblSuma.Size = new Size(87, 30);
+            lblSuma.Size = new Size(24, 30);
             lblSuma.TabIndex = 20;
-            lblSuma.Text = "lblSuma";
+            lblSuma.Text = "0";
             // 
             // Form10BotonesNumeros
             // 

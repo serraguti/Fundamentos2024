@@ -34,6 +34,7 @@
             txtNumero2 = new TextBox();
             btnSumarNumeros = new Button();
             lblResultado = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -88,11 +89,22 @@
             lblResultado.TabIndex = 5;
             lblResultado.Text = "label3";
             // 
+            // button1
+            // 
+            button1.Location = new Point(492, 79);
+            button1.Name = "button1";
+            button1.Size = new Size(288, 101);
+            button1.TabIndex = 6;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Form01SumarNumeros
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(353, 327);
+            ClientSize = new Size(899, 459);
+            Controls.Add(button1);
             Controls.Add(lblResultado);
             Controls.Add(btnSumarNumeros);
             Controls.Add(txtNumero2);
@@ -115,5 +127,6 @@
         private TextBox txtNumero2;
         private Button btnSumarNumeros;
         private Label lblResultado;
+        private Button button1;
     }
 }
