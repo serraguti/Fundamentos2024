@@ -49,6 +49,8 @@
             button19 = new Button();
             button20 = new Button();
             lblSuma = new Label();
+            label1 = new Label();
+            listBox1 = new ListBox();
             SuspendLayout();
             // 
             // button1
@@ -260,11 +262,32 @@
             lblSuma.TabIndex = 20;
             lblSuma.Text = "0";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(633, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(164, 30);
+            label1.TabIndex = 21;
+            label1.Text = "Tabla multiplicar";
+            // 
+            // listBox1
+            // 
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 30;
+            listBox1.Items.AddRange(new object[] { "5", "10", "15", "20", "25", "30", "35", "40", "45", "50" });
+            listBox1.Location = new Point(639, 62);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(330, 394);
+            listBox1.TabIndex = 22;
+            // 
             // Form10BotonesNumeros
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(614, 468);
+            ClientSize = new Size(1026, 468);
+            Controls.Add(listBox1);
+            Controls.Add(label1);
             Controls.Add(lblSuma);
             Controls.Add(button16);
             Controls.Add(button17);
@@ -317,5 +340,7 @@
         private Button button19;
         private Button button20;
         private Label lblSuma;
+        private Label label1;
+        private ListBox listBox1;
     }
 }

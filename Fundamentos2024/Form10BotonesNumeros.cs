@@ -37,12 +37,9 @@ namespace Fundamentos2024
             Button boton = (Button)sender;
             //CAPTURAMOS EL TEXTO NUMERICO DEL BOTON QUE HEMOS PULSADO
             int numero = int.Parse(boton.Text);
-            //QUEREMOS IR SUMANDO CADA NUMERO AL ANTERIOR PULSADO
-            //CAPTURAMOS EL TEXTO DEL LABEL
-            int suma = int.Parse(this.lblSuma.Text);
-            //SUMAMOS EL NUMERO A LA SUMA Y LO MOSTRAMOS
-            suma = suma + numero;
-            this.lblSuma.Text = suma.ToString();
+            //NECESITAMOS UN BUCLE DE 1 A 10
+            //DENTRO DEL BUCLE MULTIPLICAR EL NUMERO POR i
+            //AÑADIR EL RESULTADO DE ESA OPERACION AL LISTBOX Y SU COLECCION ITEMS
         }
     }
 }
