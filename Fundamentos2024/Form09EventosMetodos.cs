@@ -50,7 +50,11 @@ namespace Fundamentos2024
             //ME PERMITE MANEJAR EL EVENTO DE FORMA MANUAL
             //e.Handled = true;
             //TENEMOS ALGUNA FORMA DE SABER SI UN CHAR ES LETRA O NO????
-            if (char.IsLetter(e.KeyChar) == false)
+            //DEBEMOS PREGUNTAR POR MAS ELEMENTOS SI DESEAMOS INCLUIR MAS CARACTERES
+            //CON LOS CARACTERES NO GRAFICOS NO PODEMOS PREGUNTAR
+            //TENEMOS UNA ENUMERACION LLAMADA Keys.TIPOTECLA
+            char teclaBorrar = (char)Keys.Back;
+            if (char.IsLetter(e.KeyChar) == false && e.KeyChar != teclaBorrar)
             {
                 e.Handled = true;
             }
