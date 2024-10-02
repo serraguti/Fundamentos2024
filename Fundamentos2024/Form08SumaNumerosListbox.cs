@@ -17,14 +17,36 @@ namespace Fundamentos2024
             InitializeComponent();
         }
 
-        private void btnAgregarNumero_Click(object sender, EventArgs e)
+        void CambiarColoresBotones(Color miColorPersonal)
         {
+            this.btnAgregarNumero.BackColor = miColorPersonal;
+            this.btnSumarNumerosIndice.BackColor = miColorPersonal;
+            this.btnSumarNumerosReferencia.BackColor = miColorPersonal;
+        }
+
+        void btnAgregarNumero_Click(object sender, EventArgs e)
+        {
+            int dato = this.SumarNumeros(7, 8);
+
+            this.CambiarColoresBotones(Color.DarkTurquoise);
             int numero = int.Parse(this.txtNumero.Text);
             this.lstNumeros.Items.Add(numero);
         }
 
+        int SumarNumeros(int num1, int num2)
+        {
+            //AQUI ESCRIBIMOS LA LOGICA
+            int suma = num1 + num2;
+            //DEVOLVEMOS UN VALOR QUE CORRESPONDE CON EL TIPO DEL METODO
+            return suma;
+        }
+
+
+
+
         private void btnSumarNumeros_Click(object sender, EventArgs e)
         {
+            this.CambiarColoresBotones(Color.Red);
             //NECESITAMOS UNA VARIABLE PARA ALMACENAR LA SUMA DE CADA NUMERO
             int suma = 0;
             //VAMOS A RECORRER TODOS LOS NUMEROS DE LA LISTA
@@ -56,6 +78,26 @@ namespace Fundamentos2024
                 suma = suma + numero;
             }
             this.lblSuma.Text = suma.ToString();
+        }
+
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //DEBEMOS RECORRER TODO EL CONTENIDO STRING DE LA CAJA
+            string contenido = this.textBox1.Text;
+            for (int i = 0; i < contenido.Length; i++)
+            {
+                //CAPTURAMOS CADA LETRA
+                char letra = contenido[i];
+                //CON LA CLASE CHAR REALIZAMOS VALIDACION
+                if (char.IsLetter(letra) == false)
+                {
+                    MessageBox.Show("Solo letras!!!");
+                    break;
+                }
+            }
         }
     }
 }

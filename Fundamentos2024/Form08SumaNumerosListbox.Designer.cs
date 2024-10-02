@@ -36,6 +36,9 @@
             btnSumarNumerosIndice = new Button();
             lblSuma = new Label();
             btnSumarNumerosReferencia = new Button();
+            textBox1 = new TextBox();
+            button1 = new Button();
+            label3 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -114,11 +117,41 @@
             btnSumarNumerosReferencia.UseVisualStyleBackColor = true;
             btnSumarNumerosReferencia.Click += btnSumarNumerosReferencia_Click;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(490, 501);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(466, 35);
+            textBox1.TabIndex = 8;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(490, 557);
+            button1.Name = "button1";
+            button1.Size = new Size(248, 51);
+            button1.TabIndex = 9;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(487, 456);
+            label3.Name = "label3";
+            label3.Size = new Size(109, 30);
+            label3.TabIndex = 10;
+            label3.Text = "Solo letras";
+            // 
             // Form08SumaNumerosListbox
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(628, 464);
+            BackColor = Color.FromArgb(255, 224, 192);
+            ClientSize = new Size(997, 660);
+            Controls.Add(label3);
+            Controls.Add(button1);
+            Controls.Add(textBox1);
             Controls.Add(btnSumarNumerosReferencia);
             Controls.Add(lblSuma);
             Controls.Add(btnSumarNumerosIndice);
@@ -145,5 +178,8 @@
         private Button btnSumarNumerosIndice;
         private Label lblSuma;
         private Button btnSumarNumerosReferencia;
+        private TextBox textBox1;
+        private Button button1;
+        private Label label3;
     }
 }
