@@ -254,7 +254,7 @@
             // lblSuma
             // 
             lblSuma.AutoSize = true;
-            lblSuma.Location = new Point(40, 397);
+            lblSuma.Location = new Point(48, 400);
             lblSuma.Name = "lblSuma";
             lblSuma.Size = new Size(87, 30);
             lblSuma.TabIndex = 20;

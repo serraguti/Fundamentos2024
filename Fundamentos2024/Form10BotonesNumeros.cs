@@ -15,6 +15,12 @@ namespace Fundamentos2024
         public Form10BotonesNumeros()
         {
             InitializeComponent();
+            //RECORREMOS TODOS LOS BOTONES (Button) DENTRO DEL 
+            //FORMULARIO MEDIANTE LA COLECCION Controls
+            foreach (Button boton in this.Controls)
+            {
+                boton.BackColor = Color.LightGreen;
+            }
         }
     }
 }
