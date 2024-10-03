@@ -13,16 +13,25 @@ namespace ProyectoClases
         public string Apellidos;
         //NECESITAMOS COMPROBAR SI LA EDAD ES CORRECTA
         //CAMPO/VARIABLE DE PROPIEDAD/CLASE (private)
-        private int _CampoPropiedad;
+        private int _CampoEdad;
 
-        public int Propiedad
+        public int Edad
         {
             get {
-                return VALOR;
+                return this._CampoEdad;
             }
             set
             {
                 //value es la variable que es asignada
+                //AQUI TENEMOS UN CODIGO PARA COMPROBAR LA EDAD
+                if (value < 0)
+                {
+                    this._CampoEdad = 0;
+                }
+                else
+                {
+                    this._CampoEdad = value;
+                }
             }
         }
     }
