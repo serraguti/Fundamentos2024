@@ -56,6 +56,44 @@ namespace ProyectoClases
             return this.Nombre + " " + this.Apellidos;
         }
 
+        public string GetNombreCompleto(bool orden)
+        {
+            return this.Apellidos + " " + this.Nombre;
+        }
+
+        public string GetNombreCompleto(int orden)
+        {
+            return (this.Apellidos + " " + this.Nombre).ToUpper();
+        }
+
+        public string GetNombreCompleto(int dato1, int dato2)
+        {
+            return (this.Apellidos + " " + this.Nombre).ToLower();
+        }
+
+        public void GetNombreCompleto(string dato)
+        {
+
+        }
+
+        public void GetNombreCompleto(string dato1, string dato2)
+        {
+
+        }
+
+        #endregion
+
+        #region CONSTRUCTORES
+
+        //SOLAMENTE ESTOY DEJANDO UNA FORMA DE CREAR A LA PERSONA
+        //O LO HACE COMO YO LE DIGO O NADA DE NADA
+        public Persona(string nombre, string apellidos, int edad)
+        {
+            this.Nombre = nombre;
+            this.Apellidos = apellidos;
+            this.Edad = edad;
+        }
+
         #endregion
     }
 }
