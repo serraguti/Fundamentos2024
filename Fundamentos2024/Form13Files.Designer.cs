@@ -33,6 +33,8 @@
             btnLeerFichero = new Button();
             btnGuardarFichero = new Button();
             label2 = new Label();
+            openFileDialog1 = new OpenFileDialog();
+            saveFileDialog1 = new SaveFileDialog();
             SuspendLayout();
             // 
             // label1
@@ -81,6 +83,10 @@
             label2.TabIndex = 4;
             label2.Text = "label2";
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // Form13Files
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
@@ -106,5 +112,7 @@
         private Button btnLeerFichero;
         private Button btnGuardarFichero;
         private Label label2;
+        private OpenFileDialog openFileDialog1;
+        private SaveFileDialog saveFileDialog1;
     }
 }
