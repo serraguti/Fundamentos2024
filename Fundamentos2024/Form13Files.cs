@@ -28,15 +28,17 @@ namespace Fundamentos2024
             this.rutaFichero = @"C:\Users\Serra\Documents\test.txt";
         }
 
-        private void btnLeerFichero_Click(object sender, EventArgs e)
+        private async void btnLeerFichero_Click(object sender, EventArgs e)
         {
             //NECESITAMOS LA RUTA QUE YA LA TENEMOS A NIVEL DE CLASE
             FileInfo file = new FileInfo(this.rutaFichero);
             //CON LA CLASE TextReader LEEMOS TEXTO PLANO DE UN FICHERO
             using (TextReader reader = file.OpenText())
             {
+                //SI TENEMOS METODOS Async PARA LEER, DEBEMOS UTILIZARLOS
+                //LOS METODOS ASYNC FINALIZAN CON ESA PALABRA
                 //LEEMOS EL CONTENIDO DEL FILE
-                string contenido = reader.ReadToEnd();
+                string contenido = await reader.ReadToEndAsync();
                 //DEBEMOS CERRAR EL FICHERO
                 reader.Close();
                 this.txtContenido.Text = contenido;
