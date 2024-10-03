@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
+            txtContenido = new TextBox();
+            btnLeerFichero = new Button();
+            btnGuardarFichero = new Button();
             SuspendLayout();
             // 
             // label1
@@ -41,20 +43,40 @@
             label1.TabIndex = 0;
             label1.Text = "Contenido fichero";
             // 
-            // textBox1
+            // txtContenido
             // 
-            textBox1.Location = new Point(33, 58);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(468, 369);
-            textBox1.TabIndex = 1;
+            txtContenido.Location = new Point(33, 58);
+            txtContenido.Multiline = true;
+            txtContenido.Name = "txtContenido";
+            txtContenido.Size = new Size(468, 369);
+            txtContenido.TabIndex = 1;
+            // 
+            // btnLeerFichero
+            // 
+            btnLeerFichero.Location = new Point(562, 73);
+            btnLeerFichero.Name = "btnLeerFichero";
+            btnLeerFichero.Size = new Size(212, 65);
+            btnLeerFichero.TabIndex = 2;
+            btnLeerFichero.Text = "Leer fichero";
+            btnLeerFichero.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardarFichero
+            // 
+            btnGuardarFichero.Location = new Point(564, 169);
+            btnGuardarFichero.Name = "btnGuardarFichero";
+            btnGuardarFichero.Size = new Size(210, 61);
+            btnGuardarFichero.TabIndex = 3;
+            btnGuardarFichero.Text = "Guardar fichero";
+            btnGuardarFichero.UseVisualStyleBackColor = true;
             // 
             // Form13Files
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(875, 476);
-            Controls.Add(textBox1);
+            Controls.Add(btnGuardarFichero);
+            Controls.Add(btnLeerFichero);
+            Controls.Add(txtContenido);
             Controls.Add(label1);
             Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(5, 6, 5, 6);
@@ -67,6 +89,8 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
+        private TextBox txtContenido;
+        private Button btnLeerFichero;
+        private Button btnGuardarFichero;
     }
 }
