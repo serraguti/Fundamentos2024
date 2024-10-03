@@ -25,8 +25,11 @@ namespace Fundamentos2024
             miPersona.Nombre = "Andres";
             miPersona.Apellidos = "Leon";
             miPersona.Edad = -25;
+            miPersona.Nacionalidad = Paises.Andorra;
+
             this.lstPropiedadesPersona.Items.Add
                 (miPersona.Nombre + " " + miPersona.Apellidos + " " + miPersona.Edad);
+            this.lstPropiedadesPersona.Items.Add(miPersona.GetNombreCompleto());
         }
     }
 }

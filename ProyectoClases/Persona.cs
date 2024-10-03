@@ -11,6 +11,10 @@ namespace ProyectoClases
 
     public class Persona
     {
+        //ESTO ES PARA ORGANIZAR EL CODIGO CUANDO ES GIGANTE
+        //PODEMOS CREAR BLOQUES DE CODIGO Y CERRARLOS O ABRIRLOS
+        #region PROPIEDADES
+
         public Paises Nacionalidad { get; set; }
 
         //VAMOS A DECLARAR TRES PROPIEDADES/CARACTERISTICAS
@@ -22,7 +26,8 @@ namespace ProyectoClases
 
         public int Edad
         {
-            get {
+            get
+            {
                 return this._CampoEdad;
             }
             set
@@ -39,5 +44,18 @@ namespace ProyectoClases
                 }
             }
         }
+
+        #endregion
+
+        #region METODOS
+
+        //CREAMOS UN METODO PARA DEVOLVER EL NOMBRE COMPLETO 
+        //DE UNA PERSONA
+        public string GetNombreCompleto()
+        {
+            return this.Nombre + " " + this.Apellidos;
+        }
+
+        #endregion
     }
 }
