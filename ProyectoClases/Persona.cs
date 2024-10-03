@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace ProyectoClases
 {
+    //AQUI VAN LAS ENUMERACIONES
+    public enum Paises { España, Francia, Alemania, China, Andorra, Colombia  }
+
     public class Persona
     {
+        public Paises Nacionalidad { get; set; }
+
         //VAMOS A DECLARAR TRES PROPIEDADES/CARACTERISTICAS
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
