@@ -85,8 +85,15 @@ namespace ProyectoClases
 
         #region CONSTRUCTORES
 
-        //SOLAMENTE ESTOY DEJANDO UNA FORMA DE CREAR A LA PERSONA
-        //O LO HACE COMO YO LE DIGO O NADA DE NADA
+        public Persona()
+        {
+            //AQUI PUEDO INDICAR QUE QUIERO HACER AL CREAR UNA PERSONA
+            this.Nacionalidad = Paises.China;
+            this.Edad = 14;
+            this.Nombre = "Jhon";
+            this.Apellidos = "Doe";
+        }
+
         public Persona(string nombre, string apellidos, int edad)
         {
             this.Nombre = nombre;

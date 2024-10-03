@@ -21,7 +21,7 @@ namespace Fundamentos2024
         private void btnCrearPersona_Click(object sender, EventArgs e)
         {
             //COMENZAMOS CREANDO UNA NUEVA PERSONA
-            Persona miPersona = new Persona();
+            Persona miPersona = new Persona("Nombre", "Apellidos", 66);
             miPersona.Nombre = "Andres";
             miPersona.Apellidos = "Leon";
             miPersona.Edad = 25;
