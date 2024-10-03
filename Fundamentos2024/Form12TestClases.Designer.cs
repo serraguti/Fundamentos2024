@@ -59,6 +59,7 @@
             btnCrearPersona.TabIndex = 2;
             btnCrearPersona.Text = "Crear Persona";
             btnCrearPersona.UseVisualStyleBackColor = true;
+            btnCrearPersona.Click += btnCrearPersona_Click;
             // 
             // Form12TestClases
             // 

@@ -11,6 +11,19 @@ namespace ProyectoClases
         //VAMOS A DECLARAR TRES PROPIEDADES/CARACTERISTICAS
         public string Nombre;
         public string Apellidos;
-        public int Edad;
+        //NECESITAMOS COMPROBAR SI LA EDAD ES CORRECTA
+        //CAMPO/VARIABLE DE PROPIEDAD/CLASE (private)
+        private int _CampoPropiedad;
+
+        public int Propiedad
+        {
+            get {
+                return VALOR;
+            }
+            set
+            {
+                //value es la variable que es asignada
+            }
+        }
     }
 }
