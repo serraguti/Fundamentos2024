@@ -24,7 +24,7 @@ namespace Fundamentos2024
             Persona miPersona = new Persona();
             miPersona.Nombre = "Andres";
             miPersona.Apellidos = "Leon";
-            miPersona.Edad = 25;
+            miPersona.Edad = -25;
             this.lstPropiedadesPersona.Items.Add
                 (miPersona.Nombre + " " + miPersona.Apellidos + " " + miPersona.Edad);
         }

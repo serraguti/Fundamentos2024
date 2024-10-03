@@ -9,8 +9,8 @@ namespace ProyectoClases
     public class Persona
     {
         //VAMOS A DECLARAR TRES PROPIEDADES/CARACTERISTICAS
-        public string Nombre;
-        public string Apellidos;
+        public string Nombre { get; set; }
+        public string Apellidos { get; set; }
         //NECESITAMOS COMPROBAR SI LA EDAD ES CORRECTA
         //CAMPO/VARIABLE DE PROPIEDAD/CLASE (private)
         private int _CampoEdad;
@@ -26,7 +26,7 @@ namespace ProyectoClases
                 //AQUI TENEMOS UN CODIGO PARA COMPROBAR LA EDAD
                 if (value < 0)
                 {
-                    this._CampoEdad = 0;
+                    throw new Exception("Edad no puede ser negativa");
                 }
                 else
                 {
