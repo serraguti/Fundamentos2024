@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Fundamentos2024
 {
@@ -15,6 +17,8 @@ namespace Fundamentos2024
         public Form10BotonesNumeros()
         {
             InitializeComponent();
+            FileInfo file;
+            
             Random random = new Random();
             //RECORREMOS TODOS LOS BOTONES (Button) DENTRO DEL 
             //FORMULARIO MEDIANTE LA COLECCION Controls
