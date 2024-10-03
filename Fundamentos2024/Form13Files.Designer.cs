@@ -70,6 +70,7 @@
             btnGuardarFichero.TabIndex = 3;
             btnGuardarFichero.Text = "Guardar fichero";
             btnGuardarFichero.UseVisualStyleBackColor = true;
+            btnGuardarFichero.Click += btnGuardarFichero_Click;
             // 
             // label2
             // 

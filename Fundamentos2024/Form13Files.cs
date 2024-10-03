@@ -44,5 +44,23 @@ namespace Fundamentos2024
                 this.txtContenido.Text = contenido;
             }
         }
+
+        private async void btnGuardarFichero_Click(object sender, EventArgs e)
+        {
+            //NECESITAMOS LA RUTA AL FICHERO
+            FileInfo file = new FileInfo(this.rutaFichero);
+            using (TextWriter writer = file.CreateText())
+            {
+                //RECUPERAMOS EL CONTENIDO DE LA CAJA
+                string contenido = this.txtContenido.Text;
+                //ESCRIBIMOS EL CONTENIDO EN EL FILE
+                await writer.WriteAsync(contenido);
+                //SIEMPRE QUE ESCRIBAMOS FILES, DEBEMOS LLAMAR AL
+                //METODO FLUSH PARA QUE HAGA EL VACIADO DE MEMORIA
+                await writer.FlushAsync();
+                writer.Close();
+                MessageBox.Show("Datos almacenados");
+            }
+        }
     }
 }
