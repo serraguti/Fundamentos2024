@@ -60,6 +60,7 @@
             btnLeerFichero.TabIndex = 2;
             btnLeerFichero.Text = "Leer fichero";
             btnLeerFichero.UseVisualStyleBackColor = true;
+            btnLeerFichero.Click += btnLeerFichero_Click;
             // 
             // btnGuardarFichero
             // 

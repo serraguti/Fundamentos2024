@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Fundamentos2024
 {
@@ -25,7 +26,21 @@ namespace Fundamentos2024
             this.rutaFichero = "C:\\Users\\Serra\\Documents\\test.txt";
             //2) UTILIZAR @ ANTES DEL STRING
             this.rutaFichero = @"C:\Users\Serra\Documents\test.txt";
+        }
 
+        private void btnLeerFichero_Click(object sender, EventArgs e)
+        {
+            //NECESITAMOS LA RUTA QUE YA LA TENEMOS A NIVEL DE CLASE
+            FileInfo file = new FileInfo(this.rutaFichero);
+            //CON LA CLASE TextReader LEEMOS TEXTO PLANO DE UN FICHERO
+            using (TextReader reader = file.OpenText())
+            {
+                //LEEMOS EL CONTENIDO DEL FILE
+                string contenido = reader.ReadToEnd();
+                //DEBEMOS CERRAR EL FICHERO
+                reader.Close();
+                this.txtContenido.Text = contenido;
+            }
         }
     }
 }
