@@ -32,6 +32,7 @@
             txtContenido = new TextBox();
             btnLeerFichero = new Button();
             btnGuardarFichero = new Button();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -69,11 +70,21 @@
             btnGuardarFichero.Text = "Guardar fichero";
             btnGuardarFichero.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(593, 288);
+            label2.Name = "label2";
+            label2.Size = new Size(68, 30);
+            label2.TabIndex = 4;
+            label2.Text = "label2";
+            // 
             // Form13Files
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(875, 476);
+            Controls.Add(label2);
             Controls.Add(btnGuardarFichero);
             Controls.Add(btnLeerFichero);
             Controls.Add(txtContenido);
@@ -92,5 +103,6 @@
         private TextBox txtContenido;
         private Button btnLeerFichero;
         private Button btnGuardarFichero;
+        private Label label2;
     }
 }
