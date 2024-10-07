@@ -104,6 +104,7 @@
             btinLeerMascota.TabIndex = 7;
             btinLeerMascota.Text = "Leer mascota";
             btinLeerMascota.UseVisualStyleBackColor = true;
+            btinLeerMascota.Click += btinLeerMascota_Click;
             // 
             // Form16SerializarSimple
             // 

@@ -39,7 +39,8 @@ namespace Fundamentos2024
             //PARA ELLO SE UTILIZA LA CLASE StreamWriter
             //SI NO LE DECIMOS RUTA, SE ALMACENA EL FICHERO EN EL MISMO 
             //LUGAR DEL PROYECTO
-            using (StreamWriter writer = new StreamWriter("mascota.xml")){
+            using (StreamWriter writer = new StreamWriter("mascota.xml"))
+            {
                 //DEBEMOS SERIALIZAR EL OBJETO MASCOTA, PARA ELLO TENEMOS UN 
                 //METODO LLAMADO Serialize
                 this.serializer.Serialize(writer, mascota);
@@ -49,6 +50,22 @@ namespace Fundamentos2024
             this.txtNombre.Text = "";
             this.txtRaza.Text = "";
             this.txtAnyos.Text = "";
+        }
+
+        private async void btinLeerMascota_Click(object sender, EventArgs e)
+        {
+            //PARA LEER EL FICHERO SE UTILIZA StreamReader
+            using (StreamReader reader = new StreamReader("mascota.xml"))
+            {
+                //DENTRO DEL FICHERO TENEMOS UN OBJETO QUE REPRESENTA UNA 
+                //CLASE MASCOTA
+                //MEDIANTE EL METODO Deserialize RECUPERAMOS LA CLASE
+                Mascota mascota = (Mascota)this.serializer.Deserialize(reader);
+                reader.Close();
+                this.txtNombre.Text = mascota.Nombre;
+                this.txtRaza.Text = mascota.Raza;
+                this.txtAnyos.Text = mascota.Anyos.ToString();
+            }
         }
     }
 }
