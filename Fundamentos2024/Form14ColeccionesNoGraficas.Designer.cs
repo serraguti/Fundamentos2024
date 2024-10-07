@@ -79,6 +79,7 @@
             brtnGuardarNombre.TabIndex = 4;
             brtnGuardarNombre.Text = "Guardar nombre";
             brtnGuardarNombre.UseVisualStyleBackColor = true;
+            brtnGuardarNombre.Click += brtnGuardarNombre_Click;
             // 
             // btnMostrarNombres
             // 
@@ -86,8 +87,9 @@
             btnMostrarNombres.Name = "btnMostrarNombres";
             btnMostrarNombres.Size = new Size(285, 55);
             btnMostrarNombres.TabIndex = 5;
-            btnMostrarNombres.Text = "btnMostrarNombres";
+            btnMostrarNombres.Text = "Mostrar Nombres";
             btnMostrarNombres.UseVisualStyleBackColor = true;
+            btnMostrarNombres.Click += btnMostrarNombres_Click;
             // 
             // lblMensaje
             // 
