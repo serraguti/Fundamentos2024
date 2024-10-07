@@ -115,6 +115,7 @@
             btnNuevaMascota.TabIndex = 8;
             btnNuevaMascota.Text = "Nueva mascota";
             btnNuevaMascota.UseVisualStyleBackColor = true;
+            btnNuevaMascota.Click += btnNuevaMascota_Click;
             // 
             // btnGuardarDatos
             // 
