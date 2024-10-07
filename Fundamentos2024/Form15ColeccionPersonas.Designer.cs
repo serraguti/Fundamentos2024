@@ -67,6 +67,7 @@
             brtnGuardarPersona.TabIndex = 11;
             brtnGuardarPersona.Text = "Guardar persona";
             brtnGuardarPersona.UseVisualStyleBackColor = true;
+            brtnGuardarPersona.Click += brtnGuardarPersona_Click;
             // 
             // txtNombre
             // 
