@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ProyectoClases;
 using System.Xml.Serialization;
 using System.IO;
+using System.Runtime.CompilerServices;
 
 namespace Fundamentos2024
 {
@@ -56,6 +57,31 @@ namespace Fundamentos2024
                 this.txtNombre.Text = mascota.Nombre;
                 this.txtRaza.Text = mascota.Raza;
                 this.txtEdad.Text = mascota.Anyos.ToString();
+            }
+        }
+
+        private async void btnGuardarDatos_Click(object sender, EventArgs e)
+        {
+            using (StreamWriter writer = new StreamWriter("listamascotas.xml"))
+            {
+                this.serializer.Serialize(writer, this.coleccionMascotas);
+                await writer.FlushAsync();
+                writer.Close();
+            }
+            //ELIMINAMOS LAS MASCOTAS DE LA LISTA VISIBLE
+            this.lstMascotas.Items.Clear();
+            //ELIMINAMOS LA COLECCION DE ELEMENTOS NO VISIBLES 
+            this.coleccionMascotas.Clear();
+        }
+
+        private void btnLeerDatos_Click(object sender, EventArgs e)
+        {
+            using (StreamReader reader = new StreamReader("listamascotas.xml"))
+            {
+                this.coleccionMascotas = (List<Mascota>)
+                    this.serializer.Deserialize(reader);
+                reader.Close();
+                this.DibujarMascotas();
             }
         }
     }

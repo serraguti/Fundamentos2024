@@ -126,6 +126,7 @@
             btnGuardarDatos.TabIndex = 9;
             btnGuardarDatos.Text = "Guardar datos";
             btnGuardarDatos.UseVisualStyleBackColor = true;
+            btnGuardarDatos.Click += btnGuardarDatos_Click;
             // 
             // btnLeerDatos
             // 
@@ -135,6 +136,7 @@
             btnLeerDatos.TabIndex = 10;
             btnLeerDatos.Text = "Leer datos";
             btnLeerDatos.UseVisualStyleBackColor = true;
+            btnLeerDatos.Click += btnLeerDatos_Click;
             // 
             // Form17SerializarColeccion
             // 
