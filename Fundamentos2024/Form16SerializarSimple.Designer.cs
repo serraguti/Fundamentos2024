@@ -94,6 +94,7 @@
             btnGuardarMascota.TabIndex = 6;
             btnGuardarMascota.Text = "Guardar mascota";
             btnGuardarMascota.UseVisualStyleBackColor = true;
+            btnGuardarMascota.Click += btnGuardarMascota_Click;
             // 
             // btinLeerMascota
             // 
