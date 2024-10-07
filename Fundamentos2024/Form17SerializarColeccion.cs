@@ -46,5 +46,17 @@ namespace Fundamentos2024
             this.txtRaza.Text = "";
             this.txtEdad.Text = "";
         }
+
+        private void lstMascotas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.lstMascotas.SelectedIndex != -1)
+            {
+                int indice = this.lstMascotas.SelectedIndex;
+                Mascota mascota = this.coleccionMascotas[indice];
+                this.txtNombre.Text = mascota.Nombre;
+                this.txtRaza.Text = mascota.Raza;
+                this.txtEdad.Text = mascota.Anyos.ToString();
+            }
+        }
     }
 }

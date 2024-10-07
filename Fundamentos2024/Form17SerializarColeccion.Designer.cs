@@ -58,6 +58,7 @@
             lstMascotas.Name = "lstMascotas";
             lstMascotas.Size = new Size(294, 334);
             lstMascotas.TabIndex = 1;
+            lstMascotas.SelectedIndexChanged += lstMascotas_SelectedIndexChanged;
             // 
             // label2
             // 
