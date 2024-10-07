@@ -32,5 +32,31 @@ namespace Fundamentos2024
             this.coleccionPersonas.Add(persona);
             this.lblMensaje.Text = "Personas: " + this.coleccionPersonas.Count;
         }
+
+        private void btnMostrarPersonas_Click(object sender, EventArgs e)
+        {
+            this.lstPersonas.Items.Clear();
+            //RECORREMOS LA COLECCION DE PERSONAS
+            foreach (Persona persona in this.coleccionPersonas)
+            {
+                this.lstPersonas.Items.Add(persona.GetNombreCompleto());
+            }
+        }
+
+        private void lstPersonas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.lstPersonas.SelectedIndex != -1)
+            {
+                //TENEMOS ALGUNA PERSONA SELECCIONADA
+                //ENTRE TODO EL CONJUNTO DE PERSONAS, VAMOS A RECUPERAR 
+                //LA DEL INDICE SELECCIONADO
+                int indice = this.lstPersonas.SelectedIndex;
+                //RECUPERAMOS LA PERSONA DE LA COLECCION
+                Persona persona = this.coleccionPersonas[indice];
+                this.txtNombre.Text = persona.Nombre;
+                this.txtApellidos.Text = persona.Apellidos;
+                this.txtEdad.Text = persona.Edad.ToString();
+            }
+        }
     }
 }

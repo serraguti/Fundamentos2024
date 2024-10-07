@@ -58,6 +58,7 @@
             btnMostrarPersonas.TabIndex = 12;
             btnMostrarPersonas.Text = "Mostrar personas";
             btnMostrarPersonas.UseVisualStyleBackColor = true;
+            btnMostrarPersonas.Click += btnMostrarPersonas_Click;
             // 
             // brtnGuardarPersona
             // 
@@ -93,6 +94,7 @@
             lstPersonas.Name = "lstPersonas";
             lstPersonas.Size = new Size(272, 364);
             lstPersonas.TabIndex = 8;
+            lstPersonas.SelectedIndexChanged += lstPersonas_SelectedIndexChanged;
             // 
             // label1
             // 
