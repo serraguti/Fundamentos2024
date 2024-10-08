@@ -67,3 +67,10 @@ select * from emp where dept_no in (10, 20, 30, 80, 90, 120)
 select * from emp where dept_no not in (10, 20)
 --ESTO ES UNA NEGACION, NUNCA UTILIZAR
 select * from emp where not dept_no  in (10, 20)
+--OPERADOR LIKE
+--BUSCA COINCIDENCIAS EN TEXTO DENTRO DE UNA CADENA DE CARACTERES
+--  _ UN CARACTER CUALQUIERA
+--  ? UN CARACTER TIPO NUMERO
+--  % CUALQUIER CARACTER Y LONGITUD
+--SE UTILIZA PARA BUSQUEDAS EN TEXTOS
+
