@@ -6,6 +6,7 @@
 --DEVUELVEN TODAS LAS COLUMNAS Y TODAS LAS FILAS DE UNA TABLA
 select * from emp
 select * from dept
+insert into DEPT values (99, 'NUEVO', 'NUEVO')
 --TAMBIEN PODEMOS ESCRIBIR CONSULTAS INDICANDO LAS COLUMNAS
 --QUE DESEAMOS RECUPERAR DE LA TABLA
 select apellido, oficio, salario from emp
@@ -197,6 +198,24 @@ from DOCTOR
 inner join HOSPITAL
 on DOCTOR.HOSPITAL_COD = HOSPITAL.HOSPITAL_COD
 group by HOSPITAL.NOMBRE
+
+--1.	Se quiere dar de alta un departamento de RRHH situado en Soria 
+--y otro departamento de Informática en Alicante.  
+INSERT INTO DEPT VALUES (50, 'RRHH', 'SORIA')
+INSERT INTO DEPT VALUES (60, 'INFORMATICA', 'ALICANTE')
+
+--2.	Modificar la comisión de los empleados de la empresa, 
+--de forma que todos tengan un incremento del 10 del salario.
+UPDATE EMP SET SALARIO = SALARIO + 10 
+
+--3.	Incrementar en 10000 el salario de los interinos de 
+--la plantilla que trabajen en el turno de noche.
+update PLANTILLA SET SALARIO = SALARIO + 10000
+WHERE T = 'N'
+
+--4.	Borrar los empleados cuyo nombre de departamento sea I+D.
+select * from DEPT where DNOMBRE = 'I+D'
+delete from EMP where DEPT_NO = ???
 
 
 
