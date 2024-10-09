@@ -26,8 +26,8 @@ namespace AdoNet
         public Form01PrimerAdo()
         {
             InitializeComponent();
-            //Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;Encrypt=True;Trust Server Certificate=True
-            this.connectionString = @"Data Source=LOCALHOST;Initial Catalog=HOSPITAL;User ID=SA;Encrypt=True;Trust Server Certificate=True";
+            //Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;Encrypt=True;Persist Security Info=True;
+            this.connectionString = @"Data Source=LOCALHOST;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
             //CREAMOS LA CONEXION
             this.cn = new SqlConnection();
             //CREAMOS EL COMANDO
