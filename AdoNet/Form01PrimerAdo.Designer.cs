@@ -68,6 +68,7 @@
             btnLeerDatos.TabIndex = 2;
             btnLeerDatos.Text = "Leer datos";
             btnLeerDatos.UseVisualStyleBackColor = true;
+            btnLeerDatos.Click += btnLeerDatos_Click;
             // 
             // label1
             // 

@@ -52,5 +52,10 @@ namespace AdoNet
             this.cn.Close();
             this.lblMensaje.BackColor = Color.Red;
         }
+
+        private void btnLeerDatos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
