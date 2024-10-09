@@ -21,10 +21,30 @@ namespace AdoNet
         public Form04DeleteEnfermos()
         {
             InitializeComponent();
-            this.connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
-            //this.connectionString = @"Data Source=LOCALHOST;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
+            //this.connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
+            this.connectionString = @"Data Source=LOCALHOST;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
             this.cn = new SqlConnection(this.connectionString);
             this.com = new SqlCommand();
+            //AL INICIAR EL FORMULARIO QUEREMOS DIBUJAR LOS ENFERMOS
+            string sql = "select * from ENFERMO";
+            this.com.Connection = this.cn;
+            this.com.CommandType = CommandType.Text;
+            this.com.CommandText = sql;
+            //ENTRAR
+            this.cn.Open();
+            this.reader = this.com.ExecuteReader();
+            //ELIMINAMOS LOS DATOS DEL DIBUJO
+            this.lstEnfermos.Items.Clear();
+            //RECORREMOS TODOS LOS DATOS DEL READER
+            while (this.reader.Read())
+            {
+                string inscripcion = this.reader["INSCRIPCION"].ToString();
+                string apellido = this.reader["APELLIDO"].ToString();
+                this.lstEnfermos.Items.Add(inscripcion + " - " + apellido);
+            }
+            //SALIMOS
+            this.cn.Close();
+            this.reader.Close();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
