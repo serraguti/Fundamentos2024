@@ -80,6 +80,9 @@ namespace AdoNet
                 this.lstColumnas.Items.Add(columna);
                 this.lstTiposDato.Items.Add(tipoDato);
             }
+            //EL SIGUIENTE PASO SERA DIBUJAR UN DATO, EL APELLIDO DE UN EMPLEADO
+            string apellido = this.reader["APELLIDO"].ToString();
+            this.lstApellidos.Items.Add(apellido);
         }
     }
 }
