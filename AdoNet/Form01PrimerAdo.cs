@@ -28,11 +28,26 @@ namespace AdoNet
             InitializeComponent();
             //Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;Encrypt=True;Trust Server Certificate=True
             this.connectionString = @"Data Source=LOCALHOST;Initial Catalog=HOSPITAL;User ID=SA;Encrypt=True;Trust Server Certificate=True";
+            //CREAMOS LA CONEXION
+            this.cn = new SqlConnection();
+            //CREAMOS EL COMANDO
+            this.com = new SqlCommand();
         }
 
         private void btnConectar_Click(object sender, EventArgs e)
         {
+            //INDICAMOS LA CADENA DE CONEXION PARA CONECTAR CON SQL SERVER
+            this.cn.ConnectionString = this.connectionString;
+            //ABRIMOS LA CONEXION
+            this.cn.Open();
+            this.lblMensaje.BackColor = Color.LightGreen;
+        }
 
+        private void btnDesconectar_Click(object sender, EventArgs e)
+        {
+            //DESCONECTAMOS DE LA BASE DE DATOS
+            this.cn.Close();
+            this.lblMensaje.BackColor = Color.Red;
         }
     }
 }

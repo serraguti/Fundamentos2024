@@ -58,6 +58,7 @@
             btnDesconectar.TabIndex = 1;
             btnDesconectar.Text = "Desconectar";
             btnDesconectar.UseVisualStyleBackColor = true;
+            btnDesconectar.Click += btnDesconectar_Click;
             // 
             // btnLeerDatos
             // 
