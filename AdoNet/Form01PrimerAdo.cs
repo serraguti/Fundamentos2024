@@ -80,9 +80,17 @@ namespace AdoNet
                 this.lstColumnas.Items.Add(columna);
                 this.lstTiposDato.Items.Add(tipoDato);
             }
-            //EL SIGUIENTE PASO SERA DIBUJAR UN DATO, EL APELLIDO DE UN EMPLEADO
-            string apellido = this.reader["APELLIDO"].ToString();
-            this.lstApellidos.Items.Add(apellido);
+            //PARA PODER ACCEDER A LOS DATOS, PRIMERO DEBEMOS LEER CADA FILA
+            //NECESITAMOS UN BUCLE QUE LEA REGISTROS "MIENTRAS" QUE TENGAMOS DATOS
+            //DICHO BUCLE SE LLAMA while (condicion)
+            while (this.reader.Read())
+            {
+                //EL SIGUIENTE PASO SERA DIBUJAR UN DATO, EL APELLIDO DE UN EMPLEADO
+                string apellido = this.reader["APELLIDO"].ToString();
+                this.lstApellidos.Items.Add(apellido);
+            }
+            //CADA VEZ QUE LEAMOS LOS REGISTROS, DEBEMOS CERRAR LOS LECTORES
+            this.reader.Close();
         }
     }
 }
