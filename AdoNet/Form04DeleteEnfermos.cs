@@ -25,6 +25,11 @@ namespace AdoNet
             this.connectionString = @"Data Source=LOCALHOST;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
             this.cn = new SqlConnection(this.connectionString);
             this.com = new SqlCommand();
+            this.CargarEnfermos();
+        }
+
+        private void CargarEnfermos()
+        {
             //AL INICIAR EL FORMULARIO QUEREMOS DIBUJAR LOS ENFERMOS
             string sql = "select * from ENFERMO";
             this.com.Connection = this.cn;
@@ -60,6 +65,7 @@ namespace AdoNet
             int registrosEliminados = this.com.ExecuteNonQuery();
             this.cn.Close();
             this.lblMensaje.Text = "Enfermos eliminados: " + registrosEliminados;
+            this.CargarEnfermos();
         }
     }
 }
