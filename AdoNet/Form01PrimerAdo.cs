@@ -26,7 +26,7 @@ namespace AdoNet
         public Form01PrimerAdo()
         {
             InitializeComponent();
-            //this.connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;"
+            //this.connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
             this.connectionString = @"Data Source=LOCALHOST;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
             //CREAMOS LA CONEXION
             //INDICAMOS LA CADENA DE CONEXION PARA CONECTAR CON SQL SERVER
@@ -55,7 +55,26 @@ namespace AdoNet
 
         private void btnLeerDatos_Click(object sender, EventArgs e)
         {
-
+            //CONSULTA QUE VAMOS A REALIZAR
+            string sql = "select * from EMP";
+            //CONFIGURAMOS EL COMANDO
+            //INDICAMOS LA CONEXION QUE UTILIZARA EL COMANDO
+            this.com.Connection = this.cn;
+            //INDICAMOS EL TIPO DE CONSULTA QUE REALIZARA EL COMANDO
+            this.com.CommandType = CommandType.Text;
+            //INDICAMOS LA CONSULTA SQL
+            this.com.CommandText = sql;
+            //PARA PODER LEER NECESITAMOS QUE LA CONEXION ESTE ABIERTA
+            //EJECUTAMOS EL COMANDO CON UNA CONSULTA DE SELECCION
+            //AL EJECUTAR ESTE METODO NOS DEVUELVE UN LECTOR
+            this.reader = this.com.ExecuteReader();
+            //VAMOS A LEER LA PRIMERA COLUMNA DE LA CONSULTA
+            string columna = this.reader.GetName(0);
+            //LEEMOS EL TIPO DE DATO DE LA PRIMERA COLUMNA
+            string tipoDato = this.reader.GetDataTypeName(0);
+            //DIBUJAMOS LOS DATOS EN LAS LISTAS
+            this.lstColumnas.Items.Add(columna);
+            this.lstTiposDato.Items.Add(tipoDato);
         }
     }
 }
