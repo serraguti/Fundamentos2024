@@ -89,7 +89,7 @@ namespace AdoNet
                 string apellido = this.reader["APELLIDO"].ToString();
                 this.lstApellidos.Items.Add(apellido);
             }
-            //CADA VEZ QUE LEAMOS LOS REGISTROS, DEBEMOS CERRAR LOS LECTORES
+            //CADA VEZ QUE LEAMOS LOS REGISTROS, DEBEMOS CERRAR LOS LECTORESAAA
             this.reader.Close();
         }
     }
