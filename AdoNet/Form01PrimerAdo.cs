@@ -28,7 +28,7 @@ namespace AdoNet
             InitializeComponent();
             //this.connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
             this.connectionString = @"Data Source=LOCALHOST;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
-            //CREAMOS LA CONEXION
+            //CREAMOS LA CONEXIONjjjj
             //INDICAMOS LA CADENA DE CONEXION PARA CONECTAR CON SQL SERVER
             this.cn = new SqlConnection(this.connectionString);
             //CREAMOS EL COMANDO
@@ -89,7 +89,7 @@ namespace AdoNet
                 string apellido = this.reader["APELLIDO"].ToString();
                 this.lstApellidos.Items.Add(apellido);
             }
-            //CADA VEZ QUE LEAMOS LOS REGISTROS, DEBEMOS CERRAR LOS LECTORESAAA
+            //CADA VEZ QUE LEAMOS LOS REGISTROS, DEBEMOS CERRAR LOS LECTORES
             this.reader.Close();
         }
     }
