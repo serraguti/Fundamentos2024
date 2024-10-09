@@ -68,7 +68,8 @@ namespace AdoNet
             //EJECUTAMOS EL COMANDO CON UNA CONSULTA DE SELECCION
             //AL EJECUTAR ESTE METODO NOS DEVUELVE UN LECTOR
             this.reader = this.com.ExecuteReader();
-            //VAMOS A LEER LA PRIMERA COLUMNA DE LA CONSULTA
+
+            //VAMOS A LEER LA PRIMERA COLUMNA DE LA CONSULTAds
             string columna = this.reader.GetName(0);
             //LEEMOS EL TIPO DE DATO DE LA PRIMERA COLUMNA
             string tipoDato = this.reader.GetDataTypeName(0);
