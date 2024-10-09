@@ -28,7 +28,7 @@ namespace AdoNet
             InitializeComponent();
             //this.connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
             this.connectionString = @"Data Source=LOCALHOST;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
-            //CREAMOS LA CONEXIONjjjj
+            //CREAMOS LA CONEXION
             //INDICAMOS LA CADENA DE CONEXION PARA CONECTAR CON SQL SERVER
             this.cn = new SqlConnection(this.connectionString);
             //CREAMOS EL COMANDO
