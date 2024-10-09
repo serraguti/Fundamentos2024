@@ -48,6 +48,7 @@
             btnConectar.TabIndex = 0;
             btnConectar.Text = "Conectar BBDD";
             btnConectar.UseVisualStyleBackColor = true;
+            btnConectar.Click += btnConectar_Click;
             // 
             // btnDesconectar
             // 
