@@ -68,14 +68,18 @@ namespace AdoNet
             //EJECUTAMOS EL COMANDO CON UNA CONSULTA DE SELECCION
             //AL EJECUTAR ESTE METODO NOS DEVUELVE UN LECTOR
             this.reader = this.com.ExecuteReader();
-
-            //VAMOS A LEER LA PRIMERA COLUMNA DE LA CONSULTAds
-            string columna = this.reader.GetName(0);
-            //LEEMOS EL TIPO DE DATO DE LA PRIMERA COLUMNA
-            string tipoDato = this.reader.GetDataTypeName(0);
-            //DIBUJAMOS LOS DATOS EN LAS LISTAS
-            this.lstColumnas.Items.Add(columna);
-            this.lstTiposDato.Items.Add(tipoDato);
+            //VAMOS A REAlIZAR UN BUCLE PARA RECORRER TODAS LAS COLUMNAS
+            //DE NUESTRA CONSULTA
+            for (int i = 0; i < this.reader.FieldCount; i++)
+            {
+                //VAMOS A LEER CADA COLUMNA DE LA CONSULTA
+                string columna = this.reader.GetName(i);
+                //LEEMOS EL TIPO DE DATO DE LA CADA COLUMNA
+                string tipoDato = this.reader.GetDataTypeName(i);
+                //DIBUJAMOS LOS DATOS EN LAS LISTAS
+                this.lstColumnas.Items.Add(columna);
+                this.lstTiposDato.Items.Add(tipoDato);
+            }
         }
     }
 }
