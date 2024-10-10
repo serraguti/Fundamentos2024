@@ -1,6 +1,6 @@
 ﻿namespace AdoNet
 {
-    partial class Form07EmpleadosOficios
+    partial class Form07EmpleadosOficio
     {
         /// <summary>
         /// Required designer variable.
@@ -54,6 +54,7 @@
             lstOficios.Name = "lstOficios";
             lstOficios.Size = new Size(231, 274);
             lstOficios.TabIndex = 1;
+            lstOficios.SelectedIndexChanged += lstOficios_SelectedIndexChanged;
             // 
             // label2
             // 
@@ -97,8 +98,9 @@
             btnIncrementarSalarios.TabIndex = 6;
             btnIncrementarSalarios.Text = "Incrementar salarios";
             btnIncrementarSalarios.UseVisualStyleBackColor = true;
+            btnIncrementarSalarios.Click += btnIncrementarSalarios_Click;
             // 
-            // Form07EmpleadosOficios
+            // Form07EmpleadosOficio
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -112,7 +114,7 @@
             Controls.Add(label1);
             Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(5, 6, 5, 6);
-            Name = "Form07EmpleadosOficios";
+            Name = "Form07EmpleadosOficio";
             Text = "Form07EmpleadosOficios";
             ResumeLayout(false);
             PerformLayout();
