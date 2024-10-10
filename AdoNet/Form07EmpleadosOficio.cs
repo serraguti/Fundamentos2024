@@ -48,14 +48,28 @@ namespace AdoNet
             {
                 //AQUI NO TENEMOS NADA SELECCIONADO
                 MessageBox.Show("Selecciona un oficio primero");
-                //AQUI MI CODIGO1
-                string texto = "CODIGO 1";
             }
             else
             {
-                //EL CODIGO PARA ACTUALIZAR EL SALARIO
-                //AQUI MI CODIGO2
-                string texto = "CODIGO 2";
+                string incremento = this.txtIncrementoSalarial.Text;
+                string oficio = this.lstOficios.SelectedItem.ToString();
+                string sql = "update EMP set SALARIO = SALARIO + @incremento where OFICIO=@oficio";
+                SqlParameter pamIncremento = new SqlParameter();
+                pamIncremento.ParameterName = "@incremento";
+                pamIncremento.Value = incremento;
+                this.com.Parameters.Add(pamIncremento);
+                SqlParameter pamOficio = new SqlParameter();
+                pamOficio.ParameterName = "@oficio";
+                pamOficio.Value = oficio;
+                this.com.Parameters.Add(pamOficio);
+                this.com.Connection = this.cn;
+                this.com.CommandType = CommandType.Text;
+                this.com.CommandText = sql;
+                this.cn.Open();
+                int modificados = this.com.ExecuteNonQuery();
+                this.cn.Close();
+                this.com.Parameters.Clear();
+                MessageBox.Show("Empleados modificados: " + modificados);
             }
         }
 
