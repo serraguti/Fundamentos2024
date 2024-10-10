@@ -32,7 +32,8 @@ namespace AdoNet
             string nombre = this.txtNombre.Text;
             string localidad = this.txtLocalidad.Text;
             //BORRAR, COMILLA DOBLE (2 VECES) Y DOS MAS
-            string sql = "insert into DEPT values (" + numero + ", '" + nombre + "', '" + localidad + "')";
+            string sql = "insert into DEPT values ("
+                + numero + ", '" + nombre + "', '" + localidad + "')";
             this.com.Connection = this.cn;
             this.com.CommandType = CommandType.Text;
             this.com.CommandText = sql;
