@@ -31,7 +31,7 @@ namespace AdoNet
 
         public void CargarSalas()
         {
-            string sql = "select * from sala";
+            string sql = "select distinct nombre from sala";
             this.com.Connection = this.cn;
             this.com.CommandType = CommandType.Text;
             this.com.CommandText = sql;
