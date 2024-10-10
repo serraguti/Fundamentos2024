@@ -77,6 +77,7 @@
             btnModificarSalas.TabIndex = 4;
             btnModificarSalas.Text = "Modificar salas";
             btnModificarSalas.UseVisualStyleBackColor = true;
+            btnModificarSalas.Click += btnModificarSalas_Click;
             // 
             // Form05ModificarSalas
             // 
