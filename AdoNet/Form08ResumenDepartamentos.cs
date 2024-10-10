@@ -65,6 +65,9 @@ namespace AdoNet
             this.com.CommandText = sql;
             this.cn.Open();
             this.reader = this.com.ExecuteReader();
+            this.txtPersonas.Text = "0";
+            this.txtMaximoSalario.Text = "0";
+            this.txtMinimoSalario.Text = "0";
             while (this.reader.Read())
             {
                 string personas = this.reader["PERSONAS"].ToString();
