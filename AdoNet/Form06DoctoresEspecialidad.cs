@@ -41,5 +41,29 @@ namespace AdoNet
             this.reader.Close();
             this.cn.Close();
         }
+
+        private void lstEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string especialidad = this.lstEspecialidades.SelectedItem.ToString();
+            string sql = "select * from DOCTOR where ESPECIALIDAD=@especialidad";
+            SqlParameter pamEspecialidad = new SqlParameter();
+            pamEspecialidad.ParameterName = "@especialidad";
+            pamEspecialidad.Value = especialidad;
+            this.com.Parameters.Add(pamEspecialidad);
+            this.com.Connection = this.cn;
+            this.com.CommandType = CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            this.reader = this.com.ExecuteReader();
+            this.lstDoctores.Items.Clear();
+            while (this.reader.Read())
+            {
+                string apellido = this.reader["APELLIDO"].ToString();
+                this.lstDoctores.Items.Add(apellido);
+            }
+            this.reader.Close();
+            this.cn.Close();
+            this.com.Parameters.Clear();
+        }
     }
 }

@@ -54,6 +54,7 @@
             lstEspecialidades.Name = "lstEspecialidades";
             lstEspecialidades.Size = new Size(261, 244);
             lstEspecialidades.TabIndex = 1;
+            lstEspecialidades.SelectedIndexChanged += lstEspecialidades_SelectedIndexChanged;
             // 
             // label2
             // 
