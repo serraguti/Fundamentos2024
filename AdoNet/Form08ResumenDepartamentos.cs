@@ -51,5 +51,32 @@ namespace AdoNet
             this.reader.Close();
             this.cn.Close();
         }
+
+        private void lstDepartamentos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string departamento = this.lstDepartamentos.SelectedItem.ToString();
+            string sql = "select COUNT(*) AS PERSONAS, MAX(EMP.SALARIO) AS MAXIMO_SALARIO, MIN(EMP.SALARIO) AS MINIMO_SALARIO, DEPT.DNOMBRE from EMP inner join DEPT on EMP.DEPT_NO = DEPT.DEPT_NO WHERE DEPT.DNOMBRE=@nombredepartamento group by DEPT.DNOMBRE";
+            SqlParameter pamDepartamento = new SqlParameter();
+            pamDepartamento.ParameterName = "@nombredepartamento";
+            pamDepartamento.Value = departamento;
+            this.com.Parameters.Add(pamDepartamento);
+            this.com.Connection = this.cn;
+            this.com.CommandType = CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            this.reader = this.com.ExecuteReader();
+            while (this.reader.Read())
+            {
+                string personas = this.reader["PERSONAS"].ToString();
+                string maximoSalario = this.reader["MAXIMO_SALARIO"].ToString();
+                string minimoSalario = this.reader["MINIMO_SALARIO"].ToString();
+                this.txtPersonas.Text = personas;
+                this.txtMaximoSalario.Text = maximoSalario;
+                this.txtMinimoSalario.Text = minimoSalario;
+            }
+            this.reader.Close();
+            this.cn.Close();
+            this.com.Parameters.Clear();
+        }
     }
 }
