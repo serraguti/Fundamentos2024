@@ -65,5 +65,28 @@ namespace AdoNet
             this.cn.Close();
             this.com.Parameters.Clear();
         }
+
+        private void btnIncrementarSalario_Click(object sender, EventArgs e)
+        {
+            string sql = "update DOCTOR set SALARIO = SALARIO + @incremento where ESPECIALIDAD=@especialidad";
+            string incremento = this.txtIncremento.Text;
+            string especialidad = this.lstEspecialidades.SelectedItem.ToString();
+            SqlParameter pamIncremento = new SqlParameter();
+            pamIncremento.ParameterName = "@incremento";
+            pamIncremento.Value = incremento;
+            this.com.Parameters.Add(pamIncremento);
+            SqlParameter pamEspecialidad = new SqlParameter();
+            pamEspecialidad.ParameterName = "@especialidad";
+            pamEspecialidad.Value = especialidad;
+            this.com.Parameters.Add(pamEspecialidad);
+            this.com.Connection = this.cn;
+            this.com.CommandType = CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            int modificados = this.com.ExecuteNonQuery();
+            this.cn.Close();
+            this.com.Parameters.Clear();
+            MessageBox.Show("Doctores modificados: " + modificados);
+        }
     }
 }

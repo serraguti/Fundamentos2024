@@ -98,6 +98,7 @@
             btnIncrementarSalario.TabIndex = 6;
             btnIncrementarSalario.Text = "Incrementar salarios";
             btnIncrementarSalario.UseVisualStyleBackColor = true;
+            btnIncrementarSalario.Click += btnIncrementarSalario_Click;
             // 
             // Form06DoctoresEspecialidad
             // 
