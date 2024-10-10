@@ -71,7 +71,7 @@ namespace AdoNet
             string sql = "update DOCTOR set SALARIO = SALARIO + @incremento where ESPECIALIDAD=@especialidad";
             string incremento = this.txtIncremento.Text;
             string especialidad = this.lstEspecialidades.SelectedItem.ToString();
-            SqlParameter pamIncremento = new SqlParameter();
+            SqlParameter pamIncremento = new SqlParameter(); //cambiso
             pamIncremento.ParameterName = "@incremento";
             pamIncremento.Value = incremento;
             this.com.Parameters.Add(pamIncremento);
