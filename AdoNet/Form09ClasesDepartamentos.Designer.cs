@@ -40,6 +40,9 @@
             brnModificar = new Button();
             btnEliminar = new Button();
             lsvDepartamentos = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
             SuspendLayout();
             // 
             // label1
@@ -141,11 +144,25 @@
             // 
             // lsvDepartamentos
             // 
+            lsvDepartamentos.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
             lsvDepartamentos.Location = new Point(855, 67);
             lsvDepartamentos.Name = "lsvDepartamentos";
             lsvDepartamentos.Size = new Size(555, 411);
             lsvDepartamentos.TabIndex = 11;
             lsvDepartamentos.UseCompatibleStateImageBehavior = false;
+            lsvDepartamentos.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Número";
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Nombre";
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Localidad";
             // 
             // Form09ClasesDepartamentos
             // 
@@ -186,5 +203,8 @@
         private Button brnModificar;
         private Button btnEliminar;
         private ListView lsvDepartamentos;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
     }
 }
