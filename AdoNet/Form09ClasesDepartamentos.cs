@@ -39,7 +39,7 @@ namespace AdoNet
                 item.SubItems.Add(dept.Nombre);
                 item.SubItems.Add(dept.Localidad);
                 //AÑADIMOS CADA ITEM AL ListView
-                this.lstDepartamentos.Items.Add(item);
+                this.lsvDepartamentos.Items.Add(item);
             }
         }
 
