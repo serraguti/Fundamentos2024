@@ -54,6 +54,7 @@
             // 
             lstDepartamentos.FormattingEnabled = true;
             lstDepartamentos.ItemHeight = 30;
+            lstDepartamentos.Items.AddRange(new object[] { "10 - CONTABILIDAD - ELCHE", "20 - INVESTIGACION - MADRID" });
             lstDepartamentos.Location = new Point(33, 54);
             lstDepartamentos.Name = "lstDepartamentos";
             lstDepartamentos.Size = new Size(401, 424);

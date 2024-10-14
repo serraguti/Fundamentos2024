@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using AdoNet.Models;
 
 namespace AdoNet.Repositories
 {
@@ -81,6 +82,37 @@ namespace AdoNet.Repositories
             this.cn.Close();
             this.com.Parameters.Clear();
             return resultados;
+        }
+
+        //NECESITAMOS UN METODO PARA DEVOLVER EL CONJUNTO DE LOS DEPARTAMENTOS
+        //DEVOLVEREMOS UN List<Departamento>
+        public List<Departamento> GetDepartamentos()
+        {
+            string sql = "select * from DEPT";
+            this.com.Connection = this.cn;
+            this.com.CommandType = System.Data.CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            this.reader = this.com.ExecuteReader();
+            //CREAMOS UNA NUEVA LISTA DE DEPARTAMENTOS PARA GUARDAR LOS DATOS
+            List<Departamento> lista = new List<Departamento>();
+            while (this.reader.Read())
+            {
+                //EXTRAEMOS LOS DATOS DE LA BBDD
+                int id = int.Parse(this.reader["DEPT_NO"].ToString());
+                string nombre = this.reader["DNOMBRE"].ToString();
+                string localidad = this.reader["LOC"].ToString();
+                //POR CADA FILA DE LA BBDD, CREAMOS UN NUEVO Departamento
+                Departamento dept = new Departamento();
+                dept.IdDepartamento = id;
+                dept.Nombre = nombre;
+                dept.Localidad = localidad;
+                //AÑADIMOS CADA OBJETO Departamento A LA COLECCION/CONJUNTO
+                lista.Add(dept);
+            }
+            this.reader.Close();
+            this.cn.Close();
+            return lista;
         }
     }
 }
