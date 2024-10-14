@@ -22,6 +22,25 @@ namespace AdoNet
             //CREAMOS EL REPOSITORIO
             this.repo = new RepositoryDepartamentos();
             this.CargarDepartamentos();
+            this.CargarDepartamentosListView();
+        }
+
+        private void CargarDepartamentosListView()
+        {
+            List<Departamento> departamentos = this.repo.GetDepartamentos();
+            //LIMPIAMOS LOS ITEMS DEL LISTVIEW
+            this.lsvDepartamentos.Items.Clear();
+            foreach (Departamento dept in departamentos)
+            {
+                //POR CADA FILA, NOS CREAMOS UN NUEVO ListViewITem
+                ListViewItem item = new ListViewItem();
+                item.Text = dept.IdDepartamento.ToString();
+                //CADA DATO DE LAS SIGUIENTES COLUMNAS DE HACE MEDIANTE SubItems
+                item.SubItems.Add(dept.Nombre);
+                item.SubItems.Add(dept.Localidad);
+                //AÑADIMOS CADA ITEM AL ListView
+                this.lstDepartamentos.Items.Add(item);
+            }
         }
 
         private void CargarDepartamentos()

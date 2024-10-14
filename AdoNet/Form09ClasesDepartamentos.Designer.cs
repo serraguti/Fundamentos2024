@@ -39,6 +39,7 @@
             btnInsertar = new Button();
             brnModificar = new Button();
             btnEliminar = new Button();
+            lsvDepartamentos = new ListView();
             SuspendLayout();
             // 
             // label1
@@ -138,11 +139,20 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // lsvDepartamentos
+            // 
+            lsvDepartamentos.Location = new Point(855, 67);
+            lsvDepartamentos.Name = "lsvDepartamentos";
+            lsvDepartamentos.Size = new Size(555, 411);
+            lsvDepartamentos.TabIndex = 11;
+            lsvDepartamentos.UseCompatibleStateImageBehavior = false;
+            // 
             // Form09ClasesDepartamentos
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(819, 514);
+            ClientSize = new Size(1452, 514);
+            Controls.Add(lsvDepartamentos);
             Controls.Add(btnEliminar);
             Controls.Add(brnModificar);
             Controls.Add(btnInsertar);
@@ -175,5 +185,6 @@
         private Button btnInsertar;
         private Button brnModificar;
         private Button btnEliminar;
+        private ListView lsvDepartamentos;
     }
 }
