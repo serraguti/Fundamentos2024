@@ -45,6 +45,9 @@
             label3 = new Label();
             txtIncremento = new TextBox();
             btnIncrementarSalarios = new Button();
+            label4 = new Label();
+            txtEspecialidad = new TextBox();
+            btnCambiarEspecialidad = new Button();
             SuspendLayout();
             // 
             // label1
@@ -105,6 +108,7 @@
             // lsvDoctor
             // 
             lsvDoctor.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader10 });
+            lsvDoctor.FullRowSelect = true;
             lsvDoctor.Location = new Point(23, 342);
             lsvDoctor.Name = "lsvDoctor";
             lsvDoctor.Size = new Size(724, 234);
@@ -163,11 +167,39 @@
             btnIncrementarSalarios.UseVisualStyleBackColor = true;
             btnIncrementarSalarios.Click += btnIncrementarSalarios_Click;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(788, 217);
+            label4.Name = "label4";
+            label4.Size = new Size(193, 30);
+            label4.TabIndex = 7;
+            label4.Text = "Nueva Especialidad";
+            // 
+            // txtEspecialidad
+            // 
+            txtEspecialidad.Location = new Point(794, 248);
+            txtEspecialidad.Name = "txtEspecialidad";
+            txtEspecialidad.Size = new Size(254, 35);
+            txtEspecialidad.TabIndex = 8;
+            // 
+            // btnCambiarEspecialidad
+            // 
+            btnCambiarEspecialidad.Location = new Point(794, 295);
+            btnCambiarEspecialidad.Name = "btnCambiarEspecialidad";
+            btnCambiarEspecialidad.Size = new Size(254, 54);
+            btnCambiarEspecialidad.TabIndex = 9;
+            btnCambiarEspecialidad.Text = "Modificar Especialidad";
+            btnCambiarEspecialidad.UseVisualStyleBackColor = true;
+            // 
             // Form10HospitalesDoctores
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1096, 629);
+            Controls.Add(btnCambiarEspecialidad);
+            Controls.Add(txtEspecialidad);
+            Controls.Add(label4);
             Controls.Add(btnIncrementarSalarios);
             Controls.Add(txtIncremento);
             Controls.Add(label3);
@@ -202,5 +234,8 @@
         private Label label3;
         private TextBox txtIncremento;
         private Button btnIncrementarSalarios;
+        private Label label4;
+        private TextBox txtEspecialidad;
+        private Button btnCambiarEspecialidad;
     }
 }
