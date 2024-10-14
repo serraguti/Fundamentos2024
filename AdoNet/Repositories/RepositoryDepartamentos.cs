@@ -64,5 +64,23 @@ namespace AdoNet.Repositories
             this.com.Parameters.Clear();
             return resultados;
         }
+
+        //METODO PARA MODIFICAR
+        public int ModificarDepartamento(int id, string nombre, string localidad)
+        {
+            string sql = "update DEPT set DNOMBRE=@nombre, LOC=@localidad "
+                + " where DEPT_NO=@numero";
+            this.com.Parameters.AddWithValue("@numero", id);
+            this.com.Parameters.AddWithValue("@nombre", nombre);
+            this.com.Parameters.AddWithValue("@localidad", localidad);
+            this.com.Connection = this.cn;
+            this.com.CommandType = System.Data.CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            int resultados = this.com.ExecuteNonQuery();
+            this.cn.Close();
+            this.com.Parameters.Clear();
+            return resultados;
+        }
     }
 }

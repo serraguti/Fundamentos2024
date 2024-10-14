@@ -125,6 +125,7 @@
             brnModificar.TabIndex = 9;
             brnModificar.Text = "Modificar";
             brnModificar.UseVisualStyleBackColor = true;
+            brnModificar.Click += brnModificar_Click;
             // 
             // btnEliminar
             // 
