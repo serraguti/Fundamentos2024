@@ -63,6 +63,8 @@ namespace AdoNet
                     item.SubItems.Add(doc.Especialidad);
                     item.SubItems.Add(doc.Salario.ToString());
                     item.SubItems.Add(doc.IdHospital.ToString());
+                    //DIBUJAR CADA ITEM DENTRO DEL DIBUJO DEL LISTVIEW
+                    this.lsvDoctor.Items.Add(item);
                 }
             }
         }
