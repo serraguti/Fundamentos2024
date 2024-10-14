@@ -68,5 +68,13 @@ namespace AdoNet
                 }
             }
         }
+
+        private void btnIncrementarSalarios_Click(object sender, EventArgs e)
+        {
+            int incremento = int.Parse(this.txtIncremento.Text);
+            int idHospital = int.Parse(this.lsvHospitales.SelectedItems[0].Text);
+            int modificados = this.repo.IncrementarSalarioDoctores(idHospital, incremento);
+            MessageBox.Show("Doctores modificados: " + modificados);
+        }
     }
 }

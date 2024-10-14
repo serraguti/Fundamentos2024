@@ -42,6 +42,9 @@
             columnHeader8 = new ColumnHeader();
             columnHeader9 = new ColumnHeader();
             columnHeader10 = new ColumnHeader();
+            label3 = new Label();
+            txtIncremento = new TextBox();
+            btnIncrementarSalarios = new Button();
             SuspendLayout();
             // 
             // label1
@@ -134,11 +137,40 @@
             columnHeader10.Text = "HOSPITAL";
             columnHeader10.Width = 150;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(781, 18);
+            label3.Name = "label3";
+            label3.Size = new Size(189, 30);
+            label3.TabIndex = 4;
+            label3.Text = "Incremento salarial";
+            // 
+            // txtIncremento
+            // 
+            txtIncremento.Location = new Point(786, 49);
+            txtIncremento.Name = "txtIncremento";
+            txtIncremento.Size = new Size(262, 35);
+            txtIncremento.TabIndex = 5;
+            // 
+            // btnIncrementarSalarios
+            // 
+            btnIncrementarSalarios.Location = new Point(786, 92);
+            btnIncrementarSalarios.Name = "btnIncrementarSalarios";
+            btnIncrementarSalarios.Size = new Size(262, 53);
+            btnIncrementarSalarios.TabIndex = 6;
+            btnIncrementarSalarios.Text = "Incrementar salarios";
+            btnIncrementarSalarios.UseVisualStyleBackColor = true;
+            btnIncrementarSalarios.Click += btnIncrementarSalarios_Click;
+            // 
             // Form10HospitalesDoctores
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(826, 629);
+            ClientSize = new Size(1096, 629);
+            Controls.Add(btnIncrementarSalarios);
+            Controls.Add(txtIncremento);
+            Controls.Add(label3);
             Controls.Add(lsvDoctor);
             Controls.Add(label2);
             Controls.Add(lsvHospitales);
@@ -167,5 +199,8 @@
         private ColumnHeader columnHeader8;
         private ColumnHeader columnHeader9;
         private ColumnHeader columnHeader10;
+        private Label label3;
+        private TextBox txtIncremento;
+        private Button btnIncrementarSalarios;
     }
 }

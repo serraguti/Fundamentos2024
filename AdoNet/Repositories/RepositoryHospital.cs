@@ -77,5 +77,20 @@ namespace AdoNet.Repositories
             this.com.Parameters.Clear();
             return lista;
         }
+
+        public int IncrementarSalarioDoctores(int idHospital, int incremento)
+        {
+            string sql = "update DOCTOR set SALARIO=SALARIO + @incremento where HOSPITAL_COD=@idhospital";
+            this.com.Parameters.AddWithValue("@incremento", incremento);
+            this.com.Parameters.AddWithValue("@idhospital", idHospital);
+            this.com.Connection = this.cn;
+            this.com.CommandType = System.Data.CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            int resultados = this.com.ExecuteNonQuery();
+            this.cn.Close();
+            this.com.Parameters.Clear();
+            return resultados;
+        }
     }
 }
