@@ -48,5 +48,21 @@ namespace AdoNet.Repositories
             this.com.Parameters.Clear();
             return insertados;
         }
+
+        //METODO ELIMINAR
+        public int EliminarDepartamento(int id)
+        {
+            string sql = "delete from DEPT where DEPT_NO=@numero";
+            //TENEMOS UNA FORMA MAS SIMPLE DE GUARDAR PARAMETROS EN UNA SOLA LINEA
+            this.com.Parameters.AddWithValue("@numero", id);
+            this.com.Connection = this.cn;
+            this.com.CommandType = System.Data.CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            int resultados = this.com.ExecuteNonQuery();
+            this.cn.Close();
+            this.com.Parameters.Clear();
+            return resultados;
+        }
     }
 }

@@ -31,5 +31,12 @@ namespace AdoNet
             int resultados = this.repo.InsertarDepartamento(id, nombre, localidad);
             MessageBox.Show("Departamentos insertados: " + resultados);
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(this.txtNumero.Text);
+            int resultados = this.repo.EliminarDepartamento(id);
+            MessageBox.Show("Eliminados: " + resultados);
+        }
     }
 }
