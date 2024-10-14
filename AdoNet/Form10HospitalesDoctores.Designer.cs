@@ -49,6 +49,7 @@
             // lsvHospitales
             // 
             lsvHospitales.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5 });
+            lsvHospitales.FullRowSelect = true;
             lsvHospitales.Location = new Point(40, 62);
             lsvHospitales.Name = "lsvHospitales";
             lsvHospitales.Size = new Size(724, 248);
