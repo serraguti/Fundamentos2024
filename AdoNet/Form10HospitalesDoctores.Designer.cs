@@ -85,7 +85,7 @@
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(942, 555);
+            ClientSize = new Size(826, 555);
             Controls.Add(lsvHospitales);
             Controls.Add(label1);
             Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
