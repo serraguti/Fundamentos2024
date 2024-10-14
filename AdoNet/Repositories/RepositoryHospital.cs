@@ -51,5 +51,31 @@ namespace AdoNet.Repositories
             this.cn.Close();
             return lista;
         }
+
+        public List<Doctor> GetDoctoresHospital(int idhospital)
+        {
+            string sql = "select * from DOCTOR where HOSPITAL_COD=@idhospital";
+            this.com.Parameters.AddWithValue("@idhospital", idhospital);
+            this.com.Connection = this.cn;
+            this.com.CommandType = System.Data.CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            this.reader = this.com.ExecuteReader();
+            List<Doctor> lista = new List<Doctor>();
+            while (this.reader.Read())
+            {
+                Doctor doctor = new Doctor();
+                doctor.IdDoctor = int.Parse(this.reader["DOCTOR_NO"].ToString());
+                doctor.Apellido = this.reader["APELLIDO"].ToString();
+                doctor.Especialidad = this.reader["ESPECIALIDAD"].ToString();
+                doctor.Salario = int.Parse(this.reader["SALARIO"].ToString());
+                doctor.IdHospital = int.Parse(this.reader["HOSPITAL_COD"].ToString());
+                lista.Add(doctor);
+            }
+            this.reader.Close();
+            this.cn.Close();
+            this.com.Parameters.Clear();
+            return lista;
+        }
     }
 }

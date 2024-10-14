@@ -23,7 +23,8 @@ namespace AdoNet
             this.CargarHospitales();
         }
 
-        private void CargarHospitales() {
+        private void CargarHospitales()
+        {
             List<Hospital> hospitales = this.repo.GetHospitales();
             this.lsvHospitales.Items.Clear();
             foreach (Hospital hospital in hospitales)
@@ -37,6 +38,32 @@ namespace AdoNet
                 item.SubItems.Add(hospital.Camas.ToString());
                 //AGREGAMOS EL Item A LA LISTA DEL DIBUJO
                 this.lsvHospitales.Items.Add(item);
+            }
+        }
+
+        private void lsvHospitales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //DEBEMOS PREGUNTAR SI TENEMOS ALGUN HOSPITAL SELECCIONADO
+            //PARA PODER MOSTRAR LOS DOCTORES
+            if (this.lsvHospitales.SelectedItems.Count != 0)
+            {
+                //EL SIGUIENTE PASO ES RECUPERAR EL ELEMENTO SELECCIONADO
+                //PARA ELLO, SE REALIZA MEDIANTE SelectedItems[0]
+                ListViewItem itemSeleccionado = this.lsvHospitales.SelectedItems[0];
+                //RECUPERAMOS EL TEXTO DEL ITEM QUE ES LA PRIMERA COLUMNA DEL 
+                //CONTROL LISTVIEW
+                int idHospital = int.Parse(itemSeleccionado.Text);
+                List<Doctor> doctores = this.repo.GetDoctoresHospital(idHospital);
+                this.lsvDoctor.Items.Clear();
+                foreach (Doctor doc in doctores)
+                {
+                    ListViewItem item = new ListViewItem();
+                    item.Text = doc.IdDoctor.ToString();
+                    item.SubItems.Add(doc.Apellido);
+                    item.SubItems.Add(doc.Especialidad);
+                    item.SubItems.Add(doc.Salario.ToString());
+                    item.SubItems.Add(doc.IdHospital.ToString());
+                }
             }
         }
     }

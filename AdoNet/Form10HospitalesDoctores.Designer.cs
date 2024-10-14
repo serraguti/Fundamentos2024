@@ -35,12 +35,19 @@
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
+            label2 = new Label();
+            lsvDoctor = new ListView();
+            columnHeader6 = new ColumnHeader();
+            columnHeader7 = new ColumnHeader();
+            columnHeader8 = new ColumnHeader();
+            columnHeader9 = new ColumnHeader();
+            columnHeader10 = new ColumnHeader();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(35, 26);
+            label1.Location = new Point(18, 11);
             label1.Name = "label1";
             label1.Size = new Size(109, 30);
             label1.TabIndex = 0;
@@ -50,12 +57,13 @@
             // 
             lsvHospitales.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4, columnHeader5 });
             lsvHospitales.FullRowSelect = true;
-            lsvHospitales.Location = new Point(40, 62);
+            lsvHospitales.Location = new Point(23, 47);
             lsvHospitales.Name = "lsvHospitales";
             lsvHospitales.Size = new Size(724, 248);
             lsvHospitales.TabIndex = 1;
             lsvHospitales.UseCompatibleStateImageBehavior = false;
             lsvHospitales.View = View.Details;
+            lsvHospitales.SelectedIndexChanged += lsvHospitales_SelectedIndexChanged;
             // 
             // columnHeader1
             // 
@@ -82,11 +90,57 @@
             columnHeader5.Text = "CAMAS";
             columnHeader5.Width = 100;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(23, 309);
+            label2.Name = "label2";
+            label2.Size = new Size(96, 30);
+            label2.TabIndex = 2;
+            label2.Text = "Doctores";
+            // 
+            // lsvDoctor
+            // 
+            lsvDoctor.Columns.AddRange(new ColumnHeader[] { columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader10 });
+            lsvDoctor.Location = new Point(23, 342);
+            lsvDoctor.Name = "lsvDoctor";
+            lsvDoctor.Size = new Size(724, 234);
+            lsvDoctor.TabIndex = 3;
+            lsvDoctor.UseCompatibleStateImageBehavior = false;
+            lsvDoctor.View = View.Details;
+            // 
+            // columnHeader6
+            // 
+            columnHeader6.Text = "ID";
+            // 
+            // columnHeader7
+            // 
+            columnHeader7.Text = "APELLIDO";
+            columnHeader7.Width = 150;
+            // 
+            // columnHeader8
+            // 
+            columnHeader8.Text = "ESPECIALIDAD";
+            columnHeader8.TextAlign = HorizontalAlignment.Center;
+            columnHeader8.Width = 160;
+            // 
+            // columnHeader9
+            // 
+            columnHeader9.Text = "SALARIO";
+            columnHeader9.Width = 150;
+            // 
+            // columnHeader10
+            // 
+            columnHeader10.Text = "HOSPITAL";
+            columnHeader10.Width = 150;
+            // 
             // Form10HospitalesDoctores
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(826, 555);
+            ClientSize = new Size(826, 629);
+            Controls.Add(lsvDoctor);
+            Controls.Add(label2);
             Controls.Add(lsvHospitales);
             Controls.Add(label1);
             Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -106,5 +160,12 @@
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
+        private Label label2;
+        private ListView lsvDoctor;
+        private ColumnHeader columnHeader6;
+        private ColumnHeader columnHeader7;
+        private ColumnHeader columnHeader8;
+        private ColumnHeader columnHeader9;
+        private ColumnHeader columnHeader10;
     }
 }
