@@ -53,19 +53,7 @@ namespace AdoNet
                 //RECUPERAMOS EL TEXTO DEL ITEM QUE ES LA PRIMERA COLUMNA DEL 
                 //CONTROL LISTVIEW
                 int idHospital = int.Parse(itemSeleccionado.Text);
-                List<Doctor> doctores = this.repo.GetDoctoresHospital(idHospital);
-                this.lsvDoctor.Items.Clear();
-                foreach (Doctor doc in doctores)
-                {
-                    ListViewItem item = new ListViewItem();
-                    item.Text = doc.IdDoctor.ToString();
-                    item.SubItems.Add(doc.Apellido);
-                    item.SubItems.Add(doc.Especialidad);
-                    item.SubItems.Add(doc.Salario.ToString());
-                    item.SubItems.Add(doc.IdHospital.ToString());
-                    //DIBUJAR CADA ITEM DENTRO DEL DIBUJO DEL LISTVIEW
-                    this.lsvDoctor.Items.Add(item);
-                }
+                this.CargarDoctores(idHospital);
             }
         }
 
@@ -75,6 +63,25 @@ namespace AdoNet
             int idHospital = int.Parse(this.lsvHospitales.SelectedItems[0].Text);
             int modificados = this.repo.IncrementarSalarioDoctores(idHospital, incremento);
             MessageBox.Show("Doctores modificados: " + modificados);
+            //VOLVEMOS A DIBUJAR LOS DOCTORES
+            this.CargarDoctores(idHospital);
+        }
+
+        private void CargarDoctores(int idHospital)
+        {
+            List<Doctor> doctores = this.repo.GetDoctoresHospital(idHospital);
+            this.lsvDoctor.Items.Clear();
+            foreach (Doctor doc in doctores)
+            {
+                ListViewItem item = new ListViewItem();
+                item.Text = doc.IdDoctor.ToString();
+                item.SubItems.Add(doc.Apellido);
+                item.SubItems.Add(doc.Especialidad);
+                item.SubItems.Add(doc.Salario.ToString());
+                item.SubItems.Add(doc.IdHospital.ToString());
+                //DIBUJAR CADA ITEM DENTRO DEL DIBUJO DEL LISTVIEW
+                this.lsvDoctor.Items.Add(item);
+            }
         }
     }
 }
