@@ -83,5 +83,15 @@ namespace AdoNet
                 this.lsvDoctor.Items.Add(item);
             }
         }
+
+        private void btnCambiarEspecialidad_Click(object sender, EventArgs e)
+        {
+            int iddoctor = int.Parse(this.lsvDoctor.SelectedItems[0].Text);
+            string especialidad = this.txtEspecialidad.Text;
+            int afectados = this.repo.ModificarEspecialidadDoctor(iddoctor, especialidad);
+            MessageBox.Show("Doctores modificados: " + afectados);
+            int idhospital = int.Parse(this.lsvHospitales.SelectedItems[0].Text);
+            this.CargarDoctores(idhospital);
+        }
     }
 }

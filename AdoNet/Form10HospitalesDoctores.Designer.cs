@@ -191,6 +191,7 @@
             btnCambiarEspecialidad.TabIndex = 9;
             btnCambiarEspecialidad.Text = "Modificar Especialidad";
             btnCambiarEspecialidad.UseVisualStyleBackColor = true;
+            btnCambiarEspecialidad.Click += btnCambiarEspecialidad_Click;
             // 
             // Form10HospitalesDoctores
             // 
