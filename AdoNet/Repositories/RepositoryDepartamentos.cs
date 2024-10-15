@@ -11,6 +11,7 @@ namespace AdoNet.Repositories
     public class RepositoryDepartamentos
     {
         private string connectionString;
+
         private SqlConnection cn;
         private SqlCommand com;
         private SqlDataReader reader;
