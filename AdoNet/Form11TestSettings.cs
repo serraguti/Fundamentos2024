@@ -32,7 +32,13 @@ namespace AdoNet
             //SI ES UNA ZONA CONOCIDA COMO ConnectionStrings SE UTILIZA EL 
             //METODO GetConnectionString("KEY")
             string connectionString = configuration.GetConnectionString("HospitalExpress");
-            this.lblCadenaConexion.Text = connectionString; 
+            this.lblCadenaConexion.Text = connectionString;
+            //SI ES UNA ZONA NO CONOCIDA (Imagenes) DEBEMOS RECUPERAR LOS ELEMENTOS
+            //CON GetSection("KEY:SUBKEY")
+            string imagen1 = configuration.GetSection("Imagenes:Imagen1").Value;
+            string imagen2 = configuration.GetSection("Imagenes:Imagen2").Value;
+            this.pictureBox1.Load(imagen1);
+            this.pictureBox2.Load(imagen2);
         }
     }
 }
