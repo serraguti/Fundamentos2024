@@ -17,8 +17,8 @@ namespace NetCoreEF
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //ANTES DE LANZAR EL FORMULARIO, VAMOS A REALIZAR TODAS LAS INYECCIONES NECESARIAS
-            //string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
-            string connectionString = @"Data Source=LOCALHOST;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
+            //string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;Trust Server Certificate=True";
+            string connectionString = @"Data Source=LOCALHOST;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;Trust Server Certificate=True";
             //NECESITAMOS UN OBJETO LLAMADO ServiceProvider QUE ES EL ENCARGADO
             //DE RESOLVER LAS DEPENDENCIAS EN LAS CLASES
             //DEBEMOS INDICAR CADA CLASE QUE UTILIZAREMOS
