@@ -27,8 +27,9 @@ namespace AdoNet
             //DENTRO DEL FICHERO, TENEMOS ZONAS CONOCIDAS Y ZONAS INVENTADAS
             //SI ES UNA ZONA CONOCIDA COMO ConnectionStrings SE UTILIZA EL 
             //METODO GetConnectionString("KEY")
-            string connectionString = configuration.GetConnectionString("HospitalExpress");
-            this.lblCadenaConexion.Text = connectionString;
+            //string connectionString = configuration.GetConnectionString("HospitalExpress");
+            //this.lblCadenaConexion.Text = connectionString;
+            this.lblCadenaConexion.Text = Program.GetConnectionString();
             //SI ES UNA ZONA NO CONOCIDA (Imagenes) DEBEMOS RECUPERAR LOS ELEMENTOS
             //CON GetSection("KEY:SUBKEY")
             string imagen1 = configuration.GetSection("Imagenes:Imagen1").Value;
