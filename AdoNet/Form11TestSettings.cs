@@ -32,6 +32,7 @@ namespace AdoNet
             //SI ES UNA ZONA CONOCIDA COMO ConnectionStrings SE UTILIZA EL 
             //METODO GetConnectionString("KEY")
             string connectionString = configuration.GetConnectionString("HospitalExpress");
+            this.lblCadenaConexion.Text = connectionString; 
         }
     }
 }
