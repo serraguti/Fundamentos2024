@@ -21,8 +21,6 @@ namespace AdoNet
         private void btnSettings_Click(object sender, EventArgs e)
         {
             IConfigurationRoot configuration = Program.GetConfiguration();
-
-
             //SIMPLEMENTE TENEMOS QUE RECUPERAR LOS DATOS DE NUESTRO FICHERO
             //DENTRO DEL FICHERO, TENEMOS ZONAS CONOCIDAS Y ZONAS INVENTADAS
             //SI ES UNA ZONA CONOCIDA COMO ConnectionStrings SE UTILIZA EL 
