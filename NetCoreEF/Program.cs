@@ -32,7 +32,7 @@ namespace NetCoreEF
                 .BuildServiceProvider();
 
             //LANZA MI FORMULARIO
-            Application.Run(new Form1());
+            Application.Run(new Form01TodosEmpleados());
         }
     }
 }
