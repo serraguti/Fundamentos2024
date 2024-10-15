@@ -30,7 +30,7 @@ namespace AdoNet
             this.connectionString = @"Data Source=LOCALHOST;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
             //CREAMOS LA CONEXION
             //INDICAMOS LA CADENA DE CONEXION PARA CONECTAR CON SQL SERVER
-            this.cn = new SqlConnection(this.connectionString);
+            this.cn = new SqlConnection(Program.GetConnectionString());
             //CREAMOS EL COMANDO
             this.com = new SqlCommand();
         }

@@ -19,7 +19,7 @@ namespace AdoNet.Repositories
         {
             //this.connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
             this.connectionString = @"Data Source=LOCALHOST;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;";
-            this.cn = new SqlConnection(this.connectionString);
+            this.cn = new SqlConnection(Program.GetConnectionString());
             this.com = new SqlCommand();
         }
 
