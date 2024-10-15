@@ -59,6 +59,7 @@
             btnCargarEmpleados.TabIndex = 2;
             btnCargarEmpleados.Text = "Cargar Empleados";
             btnCargarEmpleados.UseVisualStyleBackColor = true;
+            btnCargarEmpleados.Click += btnCargarEmpleados_Click;
             // 
             // Form01TodosEmpleados
             // 

@@ -6,6 +6,7 @@ namespace NetCoreEF
 {
     internal static class Program
     {
+        public static ServiceProvider provider;
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>
@@ -26,7 +27,8 @@ namespace NetCoreEF
             //CUANDO GENERAMOS UN DBCONTEXT DEBEMOS INDICAR A QUE BASE DE DATOS
             //NOS CONECTAREMOS MEDIANTE LA CADENA DE CONEXION Y EL METODO DE CADA 
             //PROVEEDOR: UseSqlServer (SQL Server).  UseMySql(My Sql)
-            ServiceProvider provider = new ServiceCollection()
+            //ASIGNAMOS AL PROVIDER LA COLECCION DE CLASES
+            provider = new ServiceCollection()
                 .AddTransient<RepositoryEmpleados>()
                 .AddDbContext<EmpleadosContext>(options => options.UseSqlServer(connectionString))
                 .BuildServiceProvider();
