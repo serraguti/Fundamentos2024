@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetCoreEF.Data;
 
@@ -16,9 +17,15 @@ namespace NetCoreEF
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            //NECESITAMOS RECUPERAR LA CADENA DE CONEXION A PARTIR DEL FICHERO
+            //JSON DE SETTINGS
+            ConfigurationBuilder builder = new ConfigurationBuilder();
+            builder.SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", false, true);
+            IConfigurationRoot configuration = builder.Build();
+            //string connectionString = configuration.GetConnectionString("HospitalSQLExpress");
+            string connectionString = configuration.GetConnectionString("HospitalSQL");
             //ANTES DE LANZAR EL FORMULARIO, VAMOS A REALIZAR TODAS LAS INYECCIONES NECESARIAS
-            //string connectionString = @"Data Source=LOCALHOST\SQLEXPRESS;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;Trust Server Certificate=True";
-            string connectionString = @"Data Source=LOCALHOST;Initial Catalog=HOSPITAL;User ID=SA;Persist Security Info=True;Trust Server Certificate=True";
             //NECESITAMOS UN OBJETO LLAMADO ServiceProvider QUE ES EL ENCARGADO
             //DE RESOLVER LAS DEPENDENCIAS EN LAS CLASES
             //DEBEMOS INDICAR CADA CLASE QUE UTILIZAREMOS
