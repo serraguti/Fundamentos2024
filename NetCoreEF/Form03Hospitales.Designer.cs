@@ -65,6 +65,7 @@
             lsvHospitales.TabIndex = 3;
             lsvHospitales.UseCompatibleStateImageBehavior = false;
             lsvHospitales.View = View.Details;
+            lsvHospitales.SelectedIndexChanged += lsvHospitales_SelectedIndexChanged;
             // 
             // columnHeader1
             // 

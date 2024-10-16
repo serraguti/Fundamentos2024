@@ -23,5 +23,14 @@ namespace NetCoreEF.Repositories
                            select datos;
             return consulta.ToList();
         }
+
+        public Hospital FindHospital(int idhospital)
+        {
+            var consulta = from datos in this.context.Hospitales
+                           where datos.IdHospital == idhospital
+                           select datos;
+            //EN LUGAR DE DEVOLVER UNA LISTA, DEVOLVEMOS EL PRIMERO (First)
+            return consulta.First();
+        }
     }
 }

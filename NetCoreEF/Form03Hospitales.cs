@@ -38,5 +38,24 @@ namespace NetCoreEF
                 this.lsvHospitales.Items.Add(item);
             }
         }
+
+        private void lsvHospitales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.lsvHospitales.SelectedItems.Count != 0)
+            {
+                //RECUPERAMOS EL ITEM SELECCIONADO DEL LISTVIEW
+                ListViewItem itemSeleccionado = this.lsvHospitales.SelectedItems[0];
+                //EL TEXTO DEL ITEM ES EL ID DEL HOSPITAL
+                //RECUPERAMOS EL ID DEL HOSPITAL
+                int idhospital = int.Parse(itemSeleccionado.Text);
+                //BUSCAMOS EL HOSPITAL CON DICHO ID
+                Hospital hospital = this.repo.FindHospital(idhospital);
+                //PINTAMOS LOS DATOS EN LAS CAJAS
+                this.txtNombre.Text = hospital.Nombre;
+                this.txtDireccion.Text = hospital.Direccion;
+                this.txtTelefono.Text = hospital.Telefono;
+                this.txtCamas.Text = hospital.Camas.ToString();
+            }
+        }
     }
 }
