@@ -37,12 +37,6 @@ namespace NetCoreEF
                 item.SubItems.Add(h.Camas.ToString());
                 this.lsvHospitales.Items.Add(item);
             }
-
-            this.lstHospitales.Items.Clear();
-            foreach (Hospital h in hospitales)
-            {
-                this.lstHospitales.Items.Add(h.Nombre + " - " + h.Camas);
-            }
         }
     }
 }

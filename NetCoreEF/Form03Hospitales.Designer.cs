@@ -29,14 +29,20 @@
         private void InitializeComponent()
         {
             btnCargarHospitales = new Button();
-            lstHospitales = new ListBox();
-            label1 = new Label();
             lsvHospitales = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
+            label1 = new Label();
+            txtNombre = new TextBox();
+            label2 = new Label();
+            txtDireccion = new TextBox();
+            label3 = new Label();
+            txtTelefono = new TextBox();
+            label4 = new Label();
+            txtCamas = new TextBox();
             SuspendLayout();
             // 
             // btnCargarHospitales
@@ -48,24 +54,6 @@
             btnCargarHospitales.Text = "Cargar Hospitales";
             btnCargarHospitales.UseVisualStyleBackColor = true;
             btnCargarHospitales.Click += btnCargarHospitales_Click;
-            // 
-            // lstHospitales
-            // 
-            lstHospitales.FormattingEnabled = true;
-            lstHospitales.ItemHeight = 30;
-            lstHospitales.Location = new Point(727, 92);
-            lstHospitales.Name = "lstHospitales";
-            lstHospitales.Size = new Size(313, 364);
-            lstHospitales.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(727, 46);
-            label1.Name = "label1";
-            label1.Size = new Size(109, 30);
-            label1.TabIndex = 2;
-            label1.Text = "Hospitales";
             // 
             // lsvHospitales
             // 
@@ -103,14 +91,84 @@
             columnHeader5.Text = "Camas";
             columnHeader5.Width = 100;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(749, 42);
+            label1.Name = "label1";
+            label1.Size = new Size(89, 30);
+            label1.TabIndex = 4;
+            label1.Text = "Nombre";
+            // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(756, 74);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(244, 35);
+            txtNombre.TabIndex = 5;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(758, 123);
+            label2.Name = "label2";
+            label2.Size = new Size(100, 30);
+            label2.TabIndex = 6;
+            label2.Text = "Dirección";
+            // 
+            // txtDireccion
+            // 
+            txtDireccion.Location = new Point(759, 160);
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.Size = new Size(241, 35);
+            txtDireccion.TabIndex = 7;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(759, 214);
+            label3.Name = "label3";
+            label3.Size = new Size(92, 30);
+            label3.TabIndex = 8;
+            label3.Text = "Teléfono";
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.Location = new Point(762, 247);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(238, 35);
+            txtTelefono.TabIndex = 9;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(763, 295);
+            label4.Name = "label4";
+            label4.Size = new Size(75, 30);
+            label4.TabIndex = 10;
+            label4.Text = "Camas";
+            // 
+            // txtCamas
+            // 
+            txtCamas.Location = new Point(766, 332);
+            txtCamas.Name = "txtCamas";
+            txtCamas.Size = new Size(141, 35);
+            txtCamas.TabIndex = 11;
+            // 
             // Form03Hospitales
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1052, 506);
-            Controls.Add(lsvHospitales);
+            Controls.Add(txtCamas);
+            Controls.Add(label4);
+            Controls.Add(txtTelefono);
+            Controls.Add(label3);
+            Controls.Add(txtDireccion);
+            Controls.Add(label2);
+            Controls.Add(txtNombre);
             Controls.Add(label1);
-            Controls.Add(lstHospitales);
+            Controls.Add(lsvHospitales);
             Controls.Add(btnCargarHospitales);
             Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(5, 6, 5, 6);
@@ -123,13 +181,19 @@
         #endregion
 
         private Button btnCargarHospitales;
-        private ListBox lstHospitales;
-        private Label label1;
         private ListView lsvHospitales;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
+        private Label label1;
+        private TextBox txtNombre;
+        private Label label2;
+        private TextBox txtDireccion;
+        private Label label3;
+        private TextBox txtTelefono;
+        private Label label4;
+        private TextBox txtCamas;
     }
 }
