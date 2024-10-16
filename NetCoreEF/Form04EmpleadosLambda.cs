@@ -39,6 +39,13 @@ namespace NetCoreEF
             this.txtPersonas.Text = resumen.Personas.ToString();
             this.txtMaximoSalario.Text = resumen.MaximoSalario.ToString();
             this.txtMinimoSalario.Text = resumen.MinimoSalario.ToString();
+            //RECUPERAMOS TAMBIEN LOS EMPLEADOS PARA EL DIBUJO
+            List<Empleado> empleados = this.repo.GetEmpleadosOficio(oficio);
+            this.lstEmpleados.Items.Clear();
+            foreach (Empleado emp in empleados)
+            {
+                this.lstEmpleados.Items.Add(emp.Apellido);
+            }
         }
     }
 }
