@@ -24,8 +24,8 @@ namespace NetCoreEF
             builder.SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", false, true);
             IConfigurationRoot configuration = builder.Build();
-            //string connectionString = configuration.GetConnectionString("HospitalSQLExpress");
-            string connectionString = configuration.GetConnectionString("HospitalSQL");
+            string connectionString = configuration.GetConnectionString("HospitalSQLExpress");
+            //string connectionString = configuration.GetConnectionString("HospitalSQL");
             //ANTES DE LANZAR EL FORMULARIO, VAMOS A REALIZAR TODAS LAS INYECCIONES NECESARIAS
             //NECESITAMOS UN OBJETO LLAMADO ServiceProvider QUE ES EL ENCARGADO
             //DE RESOLVER LAS DEPENDENCIAS EN LAS CLASES
