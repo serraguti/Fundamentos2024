@@ -52,5 +52,22 @@ namespace NetCoreEF.Repositories
                            select datos.Oficio;
             return consulta.Distinct().ToList();
         }
+
+        //NECESITAMOS UN METODO PARA RECUPERAR PERSONAS, MAXIMO Y MINIMO POR OFICIO
+        public ResumenEmpleados GetResumenPersonas(string oficio)
+        {
+            var consulta = from datos in this.context.Empleados
+                           where datos.Oficio == oficio
+                           select datos;
+            //CREAMOS VARIABLES PARA RECUPERAR LOS DATOS DEL RESUMEN
+            int personas = consulta.Count();
+            int maximoSalario = consulta.Max(z => z.Salario);
+            int minimoSalario = consulta.Min(x => x.Salario);
+            ResumenEmpleados resumen = new ResumenEmpleados();
+            resumen.Personas = personas;
+            resumen.MaximoSalario = maximoSalario;
+            resumen.MinimoSalario = minimoSalario;
+            return resumen;
+        }
     }
 }

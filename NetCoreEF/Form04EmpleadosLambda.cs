@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using NetCoreEF.Models;
 using NetCoreEF.Repositories;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,15 @@ namespace NetCoreEF
             }
         }
 
-
+        private void cmbOficios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //CAPTURAMOS EL OFICIO SELECCIONADO
+            string oficio = this.cmbOficios.SelectedItem.ToString();
+            //RECUPERAMOS LOS DATOS DEL RESUMEN
+            ResumenEmpleados resumen = this.repo.GetResumenPersonas(oficio);
+            this.txtPersonas.Text = resumen.Personas.ToString();
+            this.txtMaximoSalario.Text = resumen.MaximoSalario.ToString();
+            this.txtMinimoSalario.Text = resumen.MinimoSalario.ToString();
+        }
     }
 }

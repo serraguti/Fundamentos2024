@@ -56,6 +56,7 @@
             cmbOficios.Name = "cmbOficios";
             cmbOficios.Size = new Size(212, 38);
             cmbOficios.TabIndex = 1;
+            cmbOficios.SelectedIndexChanged += cmbOficios_SelectedIndexChanged;
             // 
             // label2
             // 
