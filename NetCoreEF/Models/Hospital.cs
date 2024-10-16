@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace NetCoreEF.Models
     [Table("HOSPITAL")]
     public class Hospital
     {
+        [Key]
         [Column("HOSPITAL_COD")]
         public int IdHospital { get; set; }
         [Column("NOMBRE")]
