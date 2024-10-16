@@ -44,5 +44,13 @@ namespace NetCoreEF.Repositories
                            select datos;
             return consulta.ToList();
         }
+
+        //NECESITAMOS UN METODO PARA RECUPERAR LOS DISTINTOS OFICIOS
+        public List<string> GetOficios()
+        {
+            var consulta = from datos in this.context.Empleados
+                           select datos.Oficio;
+            return consulta.Distinct().ToList();
+        }
     }
 }

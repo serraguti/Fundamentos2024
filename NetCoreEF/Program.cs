@@ -43,7 +43,7 @@ namespace NetCoreEF
                 .BuildServiceProvider();
 
             //LANZA MI FORMULARIO
-            Application.Run(new Form03Hospitales());
+            Application.Run(new Form04EmpleadosLambda());
         }
     }
 }
