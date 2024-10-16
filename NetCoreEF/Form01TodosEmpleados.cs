@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using NetCoreEF.Models;
+using NetCoreEF.Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

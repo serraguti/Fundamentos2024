@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetCoreEF.Data;
+using NetCoreEF.Repositories;
 
 namespace NetCoreEF
 {
