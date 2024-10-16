@@ -21,6 +21,6 @@ namespace NetCoreEF.Models
         [Column("TELEFONO")]
         public string Telefono { get; set; }
         [Column("NUM_CAMA")]
-        public int Camas { get; set; }
+        public string Camas { get; set; }
     }
 }
