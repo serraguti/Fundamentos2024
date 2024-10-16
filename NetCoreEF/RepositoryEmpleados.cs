@@ -28,5 +28,13 @@ namespace NetCoreEF
                            select datos;
             return consulta.ToList();
         }
+
+        public List<Empleado> GetEmpleadosSalario(int salario)
+        {
+            var consulta = from datos in this.context.Empleados
+                           where datos.Salario >= salario
+                           select datos;
+            return consulta.ToList();
+        }
     }
 }
