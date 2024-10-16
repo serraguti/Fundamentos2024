@@ -44,7 +44,7 @@ namespace NetCoreEF.Repositories
                            select datos;
             return consulta.ToList();
         }
-
+        //si escribes algo en el codigo tuyo
         //NECESITAMOS UN METODO PARA RECUPERAR LOS DISTINTOS OFICIOS
         public List<string> GetOficios()
         {
