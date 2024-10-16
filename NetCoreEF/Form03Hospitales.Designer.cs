@@ -41,6 +41,7 @@
             btnCargarHospitales.TabIndex = 0;
             btnCargarHospitales.Text = "Cargar Hospitales";
             btnCargarHospitales.UseVisualStyleBackColor = true;
+            btnCargarHospitales.Click += btnCargarHospitales_Click;
             // 
             // lstHospitales
             // 
