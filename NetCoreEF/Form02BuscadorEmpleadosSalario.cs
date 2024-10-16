@@ -37,5 +37,19 @@ namespace NetCoreEF
                 this.lstEmpleados.Items.Add(emp.Apellido + " - " + emp.Salario);
             }
         }
+
+        private void btnBuscarOficios_Click(object sender, EventArgs e)
+        {
+            //RECUPERAMOS EL OFICIO DE LA CAJA
+            string oficio = this.txtOficio.Text;
+            //TRAEMOS LOS EMPLEADOS DE LA BUSQUEDA DEL REPO
+            List<Empleado> empleados = this.repo.GetEmpleadosOficio(oficio);
+            this.lstEmpleados.Items.Clear();
+            //PINTAMOS LOS EMPLEADOS EN LA LISTA
+            foreach (Empleado emp in empleados)
+            {
+                this.lstEmpleados.Items.Add(emp.Apellido + " - " + emp.Oficio);
+            }
+        }
     }
 }

@@ -36,5 +36,13 @@ namespace NetCoreEF
                            select datos;
             return consulta.ToList();
         }
+
+        public List<Empleado> GetEmpleadosOficio(string oficio)
+        {
+            var consulta = from datos in this.context.Empleados
+                           where datos.Oficio == oficio
+                           select datos;
+            return consulta.ToList();
+        }
     }
 }

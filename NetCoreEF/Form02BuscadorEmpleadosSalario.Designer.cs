@@ -33,6 +33,9 @@
             btnBuscarSalarios = new Button();
             label2 = new Label();
             lstEmpleados = new ListBox();
+            label3 = new Label();
+            txtOficio = new TextBox();
+            btnBuscarOficios = new Button();
             SuspendLayout();
             // 
             // label1
@@ -79,11 +82,40 @@
             lstEmpleados.Size = new Size(416, 274);
             lstEmpleados.TabIndex = 4;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(378, 27);
+            label3.Name = "label3";
+            label3.Size = new Size(68, 30);
+            label3.TabIndex = 5;
+            label3.Text = "Oficio";
+            // 
+            // txtOficio
+            // 
+            txtOficio.Location = new Point(382, 58);
+            txtOficio.Name = "txtOficio";
+            txtOficio.Size = new Size(297, 35);
+            txtOficio.TabIndex = 6;
+            // 
+            // btnBuscarOficios
+            // 
+            btnBuscarOficios.Location = new Point(383, 114);
+            btnBuscarOficios.Name = "btnBuscarOficios";
+            btnBuscarOficios.Size = new Size(296, 52);
+            btnBuscarOficios.TabIndex = 7;
+            btnBuscarOficios.Text = "Buscar oficios";
+            btnBuscarOficios.UseVisualStyleBackColor = true;
+            btnBuscarOficios.Click += btnBuscarOficios_Click;
+            // 
             // Form02BuscadorEmpleadosSalario
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(763, 511);
+            Controls.Add(btnBuscarOficios);
+            Controls.Add(txtOficio);
+            Controls.Add(label3);
             Controls.Add(lstEmpleados);
             Controls.Add(label2);
             Controls.Add(btnBuscarSalarios);
@@ -104,5 +136,8 @@
         private Button btnBuscarSalarios;
         private Label label2;
         private ListBox lstEmpleados;
+        private Label label3;
+        private TextBox txtOficio;
+        private Button btnBuscarOficios;
     }
 }
