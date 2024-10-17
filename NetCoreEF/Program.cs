@@ -45,7 +45,7 @@ namespace NetCoreEF
                 .BuildServiceProvider();
 
             //LANZA MI FORMULARIO
-            Application.Run(new Form07IncrementoSalarialEmpleados());
+            Application.Run(new Form08HospitalesCRUD());
         }
     }
 }
