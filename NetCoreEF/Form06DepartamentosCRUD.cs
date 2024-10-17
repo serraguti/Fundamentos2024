@@ -41,10 +41,10 @@ namespace NetCoreEF
         private void btnInsertar_Click(object sender, EventArgs e)
         {
             //RECUPERAMOS LOS DATOS DE CADA CAJA
-            int idDepartamento = int.Parse(this.txtIdDepartamento.Text);
+            //int idDepartamento = int.Parse(this.txtIdDepartamento.Text);
             string nombre = this.txtNombre.Text;
             string localidad = this.txtLocalidad.Text;
-            this.repo.InsertarDepartamento(idDepartamento, nombre, localidad);
+            this.repo.InsertarDepartamento(nombre, localidad);
             this.CargarDepartamentos();
         }
 

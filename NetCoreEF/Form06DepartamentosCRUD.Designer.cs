@@ -89,6 +89,7 @@
             label2.Size = new Size(168, 30);
             label2.TabIndex = 2;
             label2.Text = "Id departamento";
+            label2.Visible = false;
             // 
             // txtIdDepartamento
             // 
@@ -96,6 +97,7 @@
             txtIdDepartamento.Name = "txtIdDepartamento";
             txtIdDepartamento.Size = new Size(164, 35);
             txtIdDepartamento.TabIndex = 3;
+            txtIdDepartamento.Visible = false;
             // 
             // label3
             // 

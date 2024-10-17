@@ -54,8 +54,33 @@ namespace NetCoreEF.Repositories
             this.context.SaveChanges();
         }
 
-        public void InsertarDepartamento(int id, string nombre, string localidad)
+
+        private int GetMaxIdDepartamento()
         {
+            //REALIZAMOS UNA CONSULTA SOBRE TODOS LOS DEPARTAMENTOS
+            var consulta = from datos in this.context.Departamentos
+                           select datos;
+            //EN ESTA ACCION, TENEMOS DOS POSIBLES ESCENARIOS
+            //1) PODRIA SER QUE NO TUVIERAMOS DATOS EN LA CONSULTA
+            //SI NO TENEMOS DATOS EN LA CONSULTA, DEVOLVEREMOS EL NUMERO 1
+            //PREGUNTAMOS SI TENEMOS DATOS EN LOS DEPARTAMENTOS
+            if (consulta.Count() == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                //2) SI TENEMOS DATOS EN LA CONSULTA, DEVOLVEMOS EL MAX CON 
+                //EXPRESIONES LAMBDA TAL Y COMO VIMOS AYER
+                int idMaximo = consulta.Max(x => x.IdDepartamento) + 1;
+                return idMaximo;
+            }
+        }
+
+        public void InsertarDepartamento(string nombre, string localidad)
+        {
+            //RECUPERAMOS EL MAXIMO ID DE LOS DEPARTAMENTOS
+            int id = this.GetMaxIdDepartamento();
             //CREAMOS UNA NUEVA CLASE MODEL DE DEPARTAMENTO
             Departamento departamento = new Departamento();
             //ASIGNAMOS SUS PROPIEDADES
