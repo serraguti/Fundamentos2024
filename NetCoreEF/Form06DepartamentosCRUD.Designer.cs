@@ -157,6 +157,7 @@
             btnEliminar.TabIndex = 10;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // Form06DepartamentosCRUD
             // 

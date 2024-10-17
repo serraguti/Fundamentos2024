@@ -47,5 +47,14 @@ namespace NetCoreEF
             this.repo.InsertarDepartamento(idDepartamento, nombre, localidad);
             this.CargarDepartamentos();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            //RECUPERAMOS EL ID DEL DEPARTAMENTO SELECCIONADO DENTRO DE LA LISTA
+            ListViewItem item = this.lsvDepartamentos.SelectedItems[0];
+            int id = int.Parse(item.Text);
+            this.repo.EliminarDepartamento(id);
+            this.CargarDepartamentos();
+        }
     }
 }

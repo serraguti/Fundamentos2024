@@ -24,6 +24,25 @@ namespace NetCoreEF.Repositories
             return consulta.ToList();
         }
 
+        //METODO PARA BUSCAR UN DEPARTAMENTO POR SU ID
+        public Departamento FindDepartamento(int id)
+        {
+            var consulta = from datos in this.context.Departamentos
+                           where datos.IdDepartamento == id
+                           select datos;
+            return consulta.First();
+        }
+
+        public void EliminarDepartamento(int id)
+        {
+            //BUSCAR EL DEPARTAMENTO A ELIMINAR
+            Departamento departamento = this.FindDepartamento(id);
+            //ELIMINAMOS EL DEPARTAMENTO DENTRO DEL CONTEXT
+            this.context.Departamentos.Remove(departamento);
+            //GUARDAMOS LOS CAMBIOS EN LA BASE DE DATOS
+            this.context.SaveChanges();
+        }
+
         public void InsertarDepartamento(int id, string nombre, string localidad)
         {
             //CREAMOS UNA NUEVA CLASE MODEL DE DEPARTAMENTO
