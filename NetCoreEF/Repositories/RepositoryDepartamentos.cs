@@ -33,6 +33,17 @@ namespace NetCoreEF.Repositories
             return consulta.First();
         }
 
+        public void ModificarDepartamento(int id, string nombre, string localidad)
+        {
+            //BUSCAMOS EL DEPARTAMENTO A MODIFICAR
+            Departamento departamento = this.FindDepartamento(id);
+            //MODIFICAMOS LAS PROPIEDADES QUE DESEEMOS
+            departamento.Nombre = nombre;
+            departamento.Localidad = localidad;
+            //GUARDAMOS CAMBIOS EN LA BASE DE DATOS
+            this.context.SaveChanges();
+        }
+
         public void EliminarDepartamento(int id)
         {
             //BUSCAR EL DEPARTAMENTO A ELIMINAR

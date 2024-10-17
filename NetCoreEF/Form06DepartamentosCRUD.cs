@@ -69,5 +69,15 @@ namespace NetCoreEF
                 this.txtLocalidad.Text = departamento.Localidad;
             }
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            //RECUPERAMOS EL ID DEL DEPARTAMENTO A MODIFICAR
+            int id = int.Parse(this.txtIdDepartamento.Text);
+            string nombre = this.txtNombre.Text;
+            string localidad = this.txtLocalidad.Text;
+            this.repo.ModificarDepartamento(id, nombre, localidad);
+            this.CargarDepartamentos();
+        }
     }
 }
