@@ -40,11 +40,12 @@ namespace NetCoreEF
                 .AddTransient<RepositoryEmpleados>()
                 .AddTransient<RepositoryHospital>()
                 .AddTransient<RepositoryDoctores>()
+                .AddTransient<RepositoryDepartamentos>()
                 .AddDbContext<EmpleadosContext>(options => options.UseSqlServer(connectionString))
                 .BuildServiceProvider();
 
             //LANZA MI FORMULARIO
-            Application.Run(new Form05DoctoresPracticaPaco());
+            Application.Run(new Form06DepartamentosCRUD());
         }
     }
 }

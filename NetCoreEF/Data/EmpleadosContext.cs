@@ -15,6 +15,7 @@ namespace NetCoreEF.Data
         //ESTO DEBEMOS HACERLO MEDIANTE INYECCION DE DEPENDENCIAS
         public EmpleadosContext(DbContextOptions<EmpleadosContext> options):base(options) { }
         //CONTENDRA EL CONJUNTO DE DATOS DE EMPLEADOS MEDIANTE DbSet
+        public DbSet<Departamento> Departamentos { get; set; }
         public DbSet<Doctor> Doctores { get; set; }
         public DbSet<Empleado> Empleados { get; set; }
         public DbSet<Hospital> Hospitales { get; set; }
