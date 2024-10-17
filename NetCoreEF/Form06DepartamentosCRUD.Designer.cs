@@ -64,6 +64,7 @@
             lsvDepartamentos.TabIndex = 1;
             lsvDepartamentos.UseCompatibleStateImageBehavior = false;
             lsvDepartamentos.View = View.Details;
+            lsvDepartamentos.SelectedIndexChanged += lsvDepartamentos_SelectedIndexChanged;
             // 
             // columnHeader1
             // 
