@@ -44,6 +44,22 @@ namespace NetCoreEF.Repositories
                            select datos;
             return consulta.ToList();
         }
+
+        public void IncrementarSalarioEmpleados(string oficio, int incremento)
+        {
+            //A QUIEN QUEREMOS INCREMENTAR EL SALARIO?
+            //RECUPERAMOS LOS EMPLEADOS QUE TENGAN UN DETERMINADO OFICIO
+            List<Empleado> empleados = this.GetEmpleadosOficio(oficio);
+            //RECORREMOS TODOS LOS DATOS DE LOS EMPLEADOS Y 
+            //MODIFICAMOS SU SALARIO CON UN INCREMENTO
+            foreach (Empleado empleado in empleados)
+            {
+                empleado.Salario += incremento;
+            }
+            //GUARDAMOS LOS CAMBIOS EN LA BBDD Y LO TENEMOS
+            this.context.SaveChanges();
+        }
+
         //si escribes algo en el codigo tuyo
         //NECESITAMOS UN METODO PARA RECUPERAR LOS DISTINTOS OFICIOS
         public List<string> GetOficios()
