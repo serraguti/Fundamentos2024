@@ -15,7 +15,7 @@ namespace NetCoreEF
 {
     public partial class Form06DepartamentosCRUD : Form
     {
-        private RepositoryDepartamentos repo; 
+        private RepositoryDepartamentos repo;
 
         public Form06DepartamentosCRUD()
         {
@@ -36,6 +36,16 @@ namespace NetCoreEF
                 item.SubItems.Add(departamento.Localidad);
                 this.lsvDepartamentos.Items.Add(item);
             }
+        }
+
+        private void btnInsertar_Click(object sender, EventArgs e)
+        {
+            //RECUPERAMOS LOS DATOS DE CADA CAJA
+            int idDepartamento = int.Parse(this.txtIdDepartamento.Text);
+            string nombre = this.txtNombre.Text;
+            string localidad = this.txtLocalidad.Text;
+            this.repo.InsertarDepartamento(idDepartamento, nombre, localidad);
+            this.CargarDepartamentos();
         }
     }
 }
