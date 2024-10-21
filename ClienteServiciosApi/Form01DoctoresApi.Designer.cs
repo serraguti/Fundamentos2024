@@ -30,12 +30,12 @@
         {
             label1 = new Label();
             lsvDoctores = new ListView();
-            btnCargarDoctores = new Button();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
             columnHeader5 = new ColumnHeader();
+            btnCargarDoctores = new Button();
             SuspendLayout();
             // 
             // label1
@@ -57,15 +57,6 @@
             lsvDoctores.TabIndex = 1;
             lsvDoctores.UseCompatibleStateImageBehavior = false;
             lsvDoctores.View = View.Details;
-            // 
-            // btnCargarDoctores
-            // 
-            btnCargarDoctores.Location = new Point(392, 12);
-            btnCargarDoctores.Name = "btnCargarDoctores";
-            btnCargarDoctores.Size = new Size(187, 54);
-            btnCargarDoctores.TabIndex = 2;
-            btnCargarDoctores.Text = "Cargar doctores";
-            btnCargarDoctores.UseVisualStyleBackColor = true;
             // 
             // columnHeader1
             // 
@@ -90,6 +81,16 @@
             // 
             columnHeader5.Text = "Id hospital";
             columnHeader5.Width = 120;
+            // 
+            // btnCargarDoctores
+            // 
+            btnCargarDoctores.Location = new Point(392, 12);
+            btnCargarDoctores.Name = "btnCargarDoctores";
+            btnCargarDoctores.Size = new Size(187, 54);
+            btnCargarDoctores.TabIndex = 2;
+            btnCargarDoctores.Text = "Cargar doctores";
+            btnCargarDoctores.UseVisualStyleBackColor = true;
+            btnCargarDoctores.Click += btnCargarDoctores_Click;
             // 
             // Form01DoctoresApi
             // 
