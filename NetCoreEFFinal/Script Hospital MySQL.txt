@@ -1,0 +1,149 @@
+USE hospital;
+DROP TABLE DEPT;
+DROP TABLE PLANTILLA;
+DROP TABLE EMP;
+DROP TABLE DOCTOR;
+DROP TABLE ENFERMO;
+DROP TABLE HOSPITAL;
+DROP TABLE SALA;
+
+CREATE TABLE SALA (
+	HOSPITAL_COD nvarchar(50) NULL,
+	SALA_COD nvarchar(50) NULL,
+	NOMBRE nvarchar(50) NULL,
+	NUM_CAMA nvarchar(50) NULL);
+
+CREATE TABLE HOSPITAL (
+	HOSPITAL_COD int NOT NULL PRIMARY KEY,
+	NOMBRE nvarchar(50) NULL,
+	DIRECCION nvarchar(50) NULL,
+	TELEFONO nvarchar(50) NULL,
+	NUM_CAMA nvarchar(50) NULL);
+
+CREATE TABLE ENFERMO (
+	INSCRIPCION nvarchar(50) NOT NULL PRIMARY KEY,
+	APELLIDO nvarchar(50) NULL,
+	DIRECCION nvarchar(50) NULL,
+	FECHA_NAC datetime NULL,
+	SEXO nvarchar(50) NULL,
+	NSS nvarchar(50) NULL);
+
+CREATE TABLE DOCTOR (
+	HOSPITAL_COD int NULL,
+	DOCTOR_NO int NOT NULL PRIMARY KEY,
+	APELLIDO nvarchar(50) NULL,
+	ESPECIALIDAD nvarchar(50) NULL,
+	SALARIO int NULL);
+
+CREATE TABLE EMP (
+	EMP_NO int NOT NULL PRIMARY KEY,
+	APELLIDO nvarchar(50) NULL,
+	OFICIO nvarchar(50) NULL,
+	DIR int NULL,
+	FECHA_ALT datetime NULL,
+	SALARIO int NULL,
+	COMISION int NULL,
+	DEPT_NO int NULL);
+
+
+CREATE TABLE PLANTILLA (
+	HOSPITAL_COD int NULL,
+	SALA_COD int NULL,
+	EMPLEADO_NO int NOT NULL PRIMARY KEY,
+	APELLIDO nvarchar(50) NULL,
+	FUNCION nvarchar(50) NULL,
+	T nvarchar(50) NULL,
+	SALARIO int NULL);
+    
+
+CREATE TABLE DEPT
+(DEPT_NO INT PRIMARY KEY
+, DNOMBRE NVARCHAR(150)
+, LOC NVARCHAR(150));
+
+INSERT INTO DEPT VALUES (10, 'CONTABILIDAD MYSQL', 'ELCHE');
+INSERT INTO DEPT VALUES (20, 'INVESTIGACION MYSQL', 'MADRID');
+INSERT INTO DEPT VALUES (30, 'VENTAS MYSQL', 'CADIZ');
+INSERT INTO DEPT VALUES (40, 'PRODUCCION MYSQL', 'MURCIA');
+
+
+insert into HOSPITAL values(19,'provincial mysql','o donell 50','964-4264',502);
+insert into HOSPITAL values(18,'general mysql','Atocha s/n','595-3111',987);
+insert into HOSPITAL values(22,'la paz mysql','castellana 1000','923-5411',412);
+insert into HOSPITAL values(45,'san carlos mysql','ciudad universitaria','597-1500',845);
+insert into HOSPITAL values(17,'ruber mysql','juan bravo 49','914027100',217);
+
+insert into SALA values(19,3,'cuidados intensivos',21);
+insert into SALA values(19,6,'psiquiatria',67);
+insert into SALA values(18,3,'cuidados intensivos',10);
+insert into SALA values(18,4,'cardiologia',53);
+insert into SALA values(22,1,'recuperacion',10);
+insert into SALA values(22,6,'psiquiatria',118);
+insert into SALA values(22,2,'maternidad',34);
+insert into SALA values(45,4,'cardiologia',55);
+insert into SALA values(45,1,'recuperacion',17);
+insert into SALA values(45,2,'maternidad',24);
+insert into SALA values(17,2,'maternidad',19);
+insert into SALA values(17,6,'psiquiatria',20);
+insert into SALA values(17,3,'cuidados intensivos',21);
+
+insert into PLANTILLA values(19,6,3754,'diaz b.','ENFERMERO','T',226200);
+insert into PLANTILLA values(19,6,3106,'hernandez j.','ENFERMERO','T',275500);
+insert into PLANTILLA values(18,4,6357,'karplus w.','INTERINO','T',337900);
+insert into PLANTILLA values(22,6,1009,'higueras d.','ENFERMERA','T',200500);
+insert into PLANTILLA values(22,6,8422,'bocina g.','ENFERMERO','M',163800);
+insert into PLANTILLA values(22,2,9901,'nu ez c.','INTERINO','M',221000);
+insert into PLANTILLA values(22,1,6065,'rivera g.','ENFERMERA','N',162600);
+insert into PLANTILLA values(22,1,7379,'carlos r.','ENFERMERA','T',211900);
+insert into PLANTILLA values(45,4,1280,'amigo r.','INTERINO','N',221000);
+insert into PLANTILLA values(45,1,8526,'frank h.','ENFERMERO','T',252200);
+insert into PLANTILLA values(17,2,8519,'chuko c.','ENFERMERO','T',252200);
+insert into PLANTILLA values(17,6,8520,'palomo c.','INTERINO','M',219210);
+insert into PLANTILLA values(17,6,8521,'cortes v.','ENFERMERA','N',221200);
+
+insert into DOCTOR values(19,435,'Lopez A.','Cardiologia',350000);
+insert into DOCTOR values(18,585,'Miller G.','Ginecologia',250000);
+insert into DOCTOR values(18,982,'Cajal R','Cardiologia',290000);
+insert into DOCTOR values(22,453,'Galo C.','Pediatria',250000);
+insert into DOCTOR values(22,398,'Best K.','Urologia',150000);
+insert into DOCTOR values(22,386,'Cabeza D.','Psiquiatria',125000);
+insert into DOCTOR values(45,607,'Niqo P.','Pediatria',240000);
+insert into DOCTOR values(45,522,'Adams C.','Neurologia',450000);
+insert into DOCTOR values(17,521,'Nino P.','Neurologia',390000);
+insert into DOCTOR values(17,120,'Curro F.','Urologia',250000);
+
+INSERT INTO ENFERMO VALUES(10995,'Languia M.','Goya 20','1956-05-16','M',280862482);
+INSERT INTO ENFERMO VALUES(18004,'Serrano V.','Alcala 12','1960-05-21','F',284991452);
+INSERT INTO ENFERMO VALUES(14024,'Fernandez N..','Recoletos 5','1967-07-23','F',321790059);
+INSERT INTO ENFERMO VALUES(36658,'Domin S.','Mayor 71','1946-01-01','M',160657471);
+INSERT INTO ENFERMO VALUES(38702,'Neal R.','Orense 21','1940-07-18','F',380010217);
+INSERT INTO ENFERMO VALUES(39217,'Cervantes M.','Per n 38','1952-02-29','M',440294390);
+INSERT INTO ENFERMO VALUES(59076,'Miller G.','Lopez de Hoyos 2','1945-09-16','F',311969044);
+INSERT INTO ENFERMO VALUES(63827,'Ruiz P.','Esquerdo 103','1980-12-26','M',200973253);
+INSERT INTO ENFERMO VALUES(64882,'Fraser A.','Soto 3','1980-07-10','F',285201776);
+INSERT INTO ENFERMO VALUES(74835,'Benitez E.','Argentina 5','1956-10-05','M',154811767);
+
+insert into EMP values('7839','rey','PRESIDENTE',0,'1995-11-17',650000,0,10);
+insert into EMP values('7698','negro','DIRECTOR',7839,'1995-05-01',370500,0,30);
+insert into EMP values('7566','jimenez','DIRECTOR',7839,'1995-04-02',386750,0,20);
+insert into EMP values('7782','cerezo','DIRECTOR',7839,'1995-09-07',318500,0,10);
+insert into EMP values('7499','arroyo','VENDEDOR',7698,'1994-02-20',208000,39000,30);
+insert into EMP values('7521','sala','VENDEDOR',7698,'1995-02-22',162500,65000,30);
+insert into EMP values('7654','martin','VENDEDOR',7698,'1995-07-29',162500,182000,30);
+insert into EMP values('7844','tovar','VENDEDOR',7698,'1995-07-08',195000,0,30);
+insert into EMP values('7900','jimeno','EMPLEADO',7698,'1995-12-03',123500,0,30);
+insert into EMP values('7902','fernandez','ANALISTA',7566,'1995-12-11',390000,0,20);
+insert into EMP values('7788','gil','ANALISTA',7566,'1995-11-09',390000,0,20);
+insert into EMP values('7369','sancha','EMPLEADO',7902,'1994-12-17',104000,0,20);
+insert into EMP values('7876','alonso','EMPLEADO',7788,'1995-07-23',143000,0,20);
+insert into EMP values('7934','munoz','EMPLEADO',7782,'1996-01-23',169000,0,10);
+insert into EMP values('7919','serra','DIRECTOR',7839,'1997-02-02',395000,0,20);
+insert into EMP values('7907','campazzo','ANALISTA',7919,'1994-07-04',251000,25000,20);
+insert into EMP values('7917','nino','VENDEDOR',7919,'1995-05-07',171000,0,20);
+insert into EMP values('7904','ford','EMPLEADO',7907,'1996-04-04',162500,0,20);
+insert into EMP values('7914','gutierrez','ANALISTA',7919,'1986-10-20',258500,50000,20);
+COMMIT;
+SET SQL_SAFE_UPDATES = 0;
+update emp set apellido = 
+concat(apellido, ' MYSQL');
+commit;
