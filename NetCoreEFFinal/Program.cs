@@ -23,9 +23,9 @@ namespace NetCoreEFFinal
             builder.SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", false, true);
             IConfigurationRoot configuration = builder.Build();
-            //string connectionString = configuration.GetConnectionString("HospitalSQLServer");
+            string connectionString = configuration.GetConnectionString("HospitalSQLServer");
             //string connectionString = configuration.GetConnectionString("HospitalMySql");
-            string connectionString = configuration.GetConnectionString("HospitalOracle");
+            //string connectionString = configuration.GetConnectionString("HospitalOracle");
             //UNA VEZ QUE TENEMOS LA CADENA DE CONEXION Y LOS SETTINGS
             //CONFIGURAMOS LOS SERVICIOS (DbContext, Repository)
             provider = new ServiceCollection()
