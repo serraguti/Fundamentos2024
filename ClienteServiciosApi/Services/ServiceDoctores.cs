@@ -70,5 +70,11 @@ namespace ClienteServiciosApi.Services
                 }
             }
         }
+
+        public async Task<Doctor> FindDoctorAsync(int iddoctor)
+        {
+            string request = "api/doctores/" + iddoctor;
+            return null;
+        }
     }
 }
