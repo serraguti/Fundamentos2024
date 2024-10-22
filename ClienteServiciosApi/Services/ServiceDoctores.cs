@@ -74,7 +74,30 @@ namespace ClienteServiciosApi.Services
         public async Task<Doctor> FindDoctorAsync(int iddoctor)
         {
             string request = "api/doctores/" + iddoctor;
-            return null;
+            using (HttpClient client = new HttpClient())
+            {
+                //INDICAMOS LA DIRECCION DONDE ESTA NUESTRO SERVICIO (URL)
+                client.BaseAddress = new Uri(this.ApiUrlDoctores);
+                //DEBEMOS LIMPIAR LAS CABECERAS ANTES DE CONSUMIRLAS
+                client.DefaultRequestHeaders.Clear();
+                //INDICAMOS EL TIPO DE DATO QUE VAMOS A CONSUMIR
+                client.DefaultRequestHeaders.Accept.Add(this.header);
+                //REALIZAMOS EL TIPO DE PETICION GET QUE NOS PERMITE RECUPERAR 
+                //DATOS.
+                HttpResponseMessage response =
+                    await client.GetAsync(request);
+                if (response.IsSuccessStatusCode)
+                {
+                    //LOS DATOS VIENEN ALMACENADOS DENTRO DE response Y EN 
+                    //SU PROPIEDAD Content
+                    Doctor doctor = await response.Content.ReadAsAsync<Doctor>();
+                    return doctor;
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
     }
 }
