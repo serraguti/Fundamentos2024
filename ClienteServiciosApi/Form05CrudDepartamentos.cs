@@ -57,5 +57,17 @@ namespace ClienteServiciosApi
                 this.txtLocalidad.Text = departamento.Localidad;
             }
         }
+
+        private async void btnInsertar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(this.txtNumero.Text);
+            string nombre = this.txtNombre.Text;
+            string localidad = this.txtLocalidad.Text;
+            await this.service.InsertarDepartamentoAsync(id, nombre, localidad);
+            this.txtNumero.Text = "";
+            this.txtNombre.Text = "";
+            this.txtLocalidad.Text = "";
+            await this.CargarDepartamentos();
+        }
     }
 }

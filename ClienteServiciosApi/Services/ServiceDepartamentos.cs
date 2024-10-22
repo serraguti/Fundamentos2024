@@ -1,4 +1,5 @@
 ﻿using ClienteServiciosApi.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -64,6 +65,40 @@ namespace ClienteServiciosApi.Services
                 {
                     return null;
                 }
+            }
+        }
+
+        public async Task InsertarDepartamentoAsync(int id, string nombre, string localidad)
+        {
+            string request = "api/departamentos";
+            using (HttpClient client = new HttpClient())
+            {
+                //INDICAMOS LA URL BASE DEL SERVICIO
+                client.BaseAddress = new Uri(this.ApiURlDepartamentos);
+                //LIMPIAMOS LA CABECERA
+                client.DefaultRequestHeaders.Clear();
+                //ESTO ES OPCIONAL PARA INSERTAR, SOLAMENTE LO PONDRIAMOS PARA 
+                //RECUPERAR DATOS DE UN SERVICIO
+                //client.DefaultRequestHeaders.Accept.Add(this.Header);
+                //DEBEMOS CREAR UN NUEVO MODELO PARA EL SERVICIO
+                Departamento departamento = new Departamento();
+                //INDICAMOS LAS PROPIEDADES PARA DICHO MODELO
+                departamento.Numero = id;
+                departamento.Nombre = nombre;
+                departamento.Localidad = localidad;
+                //DEBEMOS CONVERTIR EL OBJETO MODELO EN FORMATO JSON
+                string jsonDepartamento = JsonConvert.SerializeObject(departamento);
+                //PARA ENVIAR DATOS AL SERVICIO (data) DEBEMOS UTILIZAR LA CLASE 
+                //StringContent QUE TIENE TRES ARGUMENTOS
+                //1) OBJETO JSON
+                //2) TIPO DE CODIFICACION
+                //3) FORMATO DEL OBJETO QUE ENVIAMOS (JSON)
+                StringContent content =
+                    new StringContent(jsonDepartamento, Encoding.UTF8, "application/json");
+                //POR ULTIMO, DEBEMOS REALIZAR LA LLAMADA MEDIANTE POST
+                //INDICANDO LA PETICION (request) Y EL CONTENIDO A ENVIAR AL SERVICIO
+                HttpResponseMessage response =
+                    await client.PostAsync(request, content);
             }
         }
 
