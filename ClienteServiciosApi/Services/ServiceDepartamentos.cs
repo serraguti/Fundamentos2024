@@ -102,5 +102,29 @@ namespace ClienteServiciosApi.Services
             }
         }
 
+        public async Task UpdateDepartamentoAsync(int id, string nombre, string localidad)
+        {
+            string request = "api/departamentos";
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(this.ApiURlDepartamentos);
+                client.DefaultRequestHeaders.Clear();
+                //DEBEMOS CREAR UN NUEVO OBJETO MODEL DEPARTAMENTO
+                Departamento departamento = new Departamento();
+                departamento.Numero = id;
+                departamento.Nombre = nombre;
+                departamento.Localidad = localidad;
+                //CONVERTIMOS EL MODELO EN FORMATO JSON
+                string json = JsonConvert.SerializeObject(departamento);
+                //DEBEMOS CREAR LA CLASE StringContent PARA ENVIAR LOS DATOS AL 
+                //SERVICIO (data)
+                StringContent content =
+                    new StringContent(json, Encoding.UTF8, "application/json");
+                //REALIZAMOS LA LLAMADA Put ENVIANDO LA PETICION (request)
+                //Y EL OBJETO JSON
+                await client.PutAsync(request, content);
+            }
+        }
+
     }
 }
