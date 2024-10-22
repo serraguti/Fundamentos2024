@@ -30,6 +30,9 @@
         {
             label1 = new Label();
             lsvDepartamentos = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
             label2 = new Label();
             txtNumero = new TextBox();
             label3 = new Label();
@@ -39,9 +42,6 @@
             btnInsertar = new Button();
             btnModificar = new Button();
             btnEliminar = new Button();
-            columnHeader1 = new ColumnHeader();
-            columnHeader2 = new ColumnHeader();
-            columnHeader3 = new ColumnHeader();
             SuspendLayout();
             // 
             // label1
@@ -63,6 +63,22 @@
             lsvDepartamentos.TabIndex = 1;
             lsvDepartamentos.UseCompatibleStateImageBehavior = false;
             lsvDepartamentos.View = View.Details;
+            lsvDepartamentos.SelectedIndexChanged += lsvDepartamentos_SelectedIndexChanged;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "NUMERO";
+            columnHeader1.Width = 130;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "NOMBRE";
+            columnHeader2.Width = 180;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "LOCALIDAD";
+            columnHeader3.Width = 180;
             // 
             // label2
             // 
@@ -138,21 +154,6 @@
             btnEliminar.TabIndex = 10;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader1
-            // 
-            columnHeader1.Text = "NUMERO";
-            columnHeader1.Width = 130;
-            // 
-            // columnHeader2
-            // 
-            columnHeader2.Text = "NOMBRE";
-            columnHeader2.Width = 180;
-            // 
-            // columnHeader3
-            // 
-            columnHeader3.Text = "LOCALIDAD";
-            columnHeader3.Width = 180;
             // 
             // Form05CrudDepartamentos
             // 

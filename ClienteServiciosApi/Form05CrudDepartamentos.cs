@@ -27,7 +27,7 @@ namespace ClienteServiciosApi
         {
             List<Departamento> departamentos = await this.service.GetDepartamentosAsync();
             this.lsvDepartamentos.Items.Clear();
-            foreach (Departamento dept  in departamentos)
+            foreach (Departamento dept in departamentos)
             {
                 ListViewItem item = new ListViewItem();
                 item.Text = dept.Numero.ToString();
@@ -40,6 +40,22 @@ namespace ClienteServiciosApi
         private async void Form05CrudDepartamentos_Load(object sender, EventArgs e)
         {
             await this.CargarDepartamentos();
+        }
+
+        private async void lsvDepartamentos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //COMPROBAMOS SI TENEMOS ALGUN DEPARTAMENTO SELECCIONADO
+            if (this.lsvDepartamentos.SelectedItems.Count != 0)
+            {
+                //RECUPERAMOS EL PRIMER ELEMENTO SELECCIONADO
+                ListViewItem item = this.lsvDepartamentos.SelectedItems[0];
+                //RECUPERAMOS EL ID DEL DEPARTAMENTO
+                int id = int.Parse(item.Text);
+                Departamento departamento = await this.service.FindDepartamentoAsync(id);
+                this.txtNumero.Text = departamento.Numero.ToString();
+                this.txtNombre.Text = departamento.Nombre;
+                this.txtLocalidad.Text = departamento.Localidad;
+            }
         }
     }
 }

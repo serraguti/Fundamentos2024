@@ -43,5 +43,29 @@ namespace ClienteServiciosApi.Services
                 }
             }
         }
+
+        public async Task<Departamento> FindDepartamentoAsync(int id)
+        {
+            string request = "api/departamentos/" + id;
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(this.ApiURlDepartamentos);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(this.Header);
+                HttpResponseMessage response =
+                    await client.GetAsync(request);
+                if (response.IsSuccessStatusCode)
+                {
+                    Departamento departamento =
+                        await response.Content.ReadAsAsync<Departamento>();
+                    return departamento;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
     }
 }
