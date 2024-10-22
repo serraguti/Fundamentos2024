@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Reflection.Metadata.Ecma335;
@@ -92,6 +93,53 @@ namespace ClienteServiciosApi.Services
                     //SU PROPIEDAD Content
                     Doctor doctor = await response.Content.ReadAsAsync<Doctor>();
                     return doctor;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        //METODO PARA RECUPERAR TODAS LAS ESPECILIDADES
+        public async Task<List<string>> GetEspecialidadesAsync()
+        {
+            string request = "api/doctores/especialidades";
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(this.ApiUrlDoctores);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(this.header);
+                HttpResponseMessage response =
+                    await client.GetAsync(request);
+                if (response.IsSuccessStatusCode)
+                {
+                    List<string> especialidades = await
+                        response.Content.ReadAsAsync<List<string>>();
+                    return especialidades;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
+
+        //METODO PARA BUSCAR DOCTORES POR ESPECIALIDAD
+        public async Task<List<Doctor>> GetDoctoresEspecialidadAsync(string especialidad)
+        {
+            string request = "api/doctores/doctoresespecialidad/" + especialidad;
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(this.ApiUrlDoctores);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(this.header);
+                HttpResponseMessage response =
+                    await client.GetAsync(request);
+                if (response.IsSuccessStatusCode)
+                {
+                    List<Doctor> doctores = await response.Content.ReadAsAsync<List<Doctor>>();
+                    return doctores;
                 }
                 else
                 {
