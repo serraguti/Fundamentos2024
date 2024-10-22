@@ -20,17 +20,6 @@ namespace ClienteServiciosApi
         {
             InitializeComponent();
             this.service = new ServiceDoctores();
-            //DEBEMOS LLAMAR A UN METODO ASINCRONO DENTRO DE UN CONSTRUCTOR
-            //Task.Run(
-            //    async () =>
-            //    {
-            //        List<string> especialidades = await
-            //            this.service.GetEspecialidadesAsync();
-            //        foreach (string espe in especialidades)
-            //        {
-            //            this.lstEspecialidades.Items.Add(espe);
-            //        }
-            //    });
         }
 
         private async void lstEspecialidades_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,6 +41,16 @@ namespace ClienteServiciosApi
         {
             List<string> especialidades = await
     this.service.GetEspecialidadesAsync();
+            foreach (string espe in especialidades)
+            {
+                this.lstEspecialidades.Items.Add(espe);
+            }
+        }
+
+        private async void Form03DoctoresEspecialidad_Load(object sender, EventArgs e)
+        {
+            List<string> especialidades = await
+                this.service.GetEspecialidadesAsync();
             foreach (string espe in especialidades)
             {
                 this.lstEspecialidades.Items.Add(espe);

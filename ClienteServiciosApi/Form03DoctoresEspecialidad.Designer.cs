@@ -32,10 +32,10 @@
             lstEspecialidades = new ListBox();
             label2 = new Label();
             lsvDoctores = new ListView();
-            btnCargarEspecialidades = new Button();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
+            btnCargarEspecialidades = new Button();
             SuspendLayout();
             // 
             // label1
@@ -77,16 +77,6 @@
             lsvDoctores.UseCompatibleStateImageBehavior = false;
             lsvDoctores.View = View.Details;
             // 
-            // btnCargarEspecialidades
-            // 
-            btnCargarEspecialidades.Location = new Point(49, 320);
-            btnCargarEspecialidades.Name = "btnCargarEspecialidades";
-            btnCargarEspecialidades.Size = new Size(229, 51);
-            btnCargarEspecialidades.TabIndex = 4;
-            btnCargarEspecialidades.Text = "Cargar especialidades";
-            btnCargarEspecialidades.UseVisualStyleBackColor = true;
-            btnCargarEspecialidades.Click += btnCargarEspecialidades_Click;
-            // 
             // columnHeader1
             // 
             columnHeader1.Text = "APELLIDO";
@@ -102,6 +92,16 @@
             columnHeader3.Text = "ESPECIALIDAD";
             columnHeader3.Width = 180;
             // 
+            // btnCargarEspecialidades
+            // 
+            btnCargarEspecialidades.Location = new Point(49, 320);
+            btnCargarEspecialidades.Name = "btnCargarEspecialidades";
+            btnCargarEspecialidades.Size = new Size(229, 51);
+            btnCargarEspecialidades.TabIndex = 4;
+            btnCargarEspecialidades.Text = "Cargar especialidades";
+            btnCargarEspecialidades.UseVisualStyleBackColor = true;
+            btnCargarEspecialidades.Click += btnCargarEspecialidades_Click;
+            // 
             // Form03DoctoresEspecialidad
             // 
             AutoScaleDimensions = new SizeF(12F, 30F);
@@ -116,6 +116,7 @@
             Margin = new Padding(5, 6, 5, 6);
             Name = "Form03DoctoresEspecialidad";
             Text = "Form03DoctoresEspecialidad";
+            Load += Form03DoctoresEspecialidad_Load;
             ResumeLayout(false);
             PerformLayout();
         }
