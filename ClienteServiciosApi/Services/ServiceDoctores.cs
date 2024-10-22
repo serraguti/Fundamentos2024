@@ -147,5 +147,28 @@ namespace ClienteServiciosApi.Services
                 }
             }
         }
+
+        //METODO PARA BUSCAR LOS DOCTORES POR UN ID DE HOSPITAL
+        public async Task<List<Doctor>> GetDoctoresHospitalAsync(int idhospital)
+        {
+            string request = "api/doctores/doctoreshospital/" + idhospital;
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(this.ApiUrlDoctores);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(this.header);
+                HttpResponseMessage response =
+                    await client.GetAsync(request);
+                if (response.IsSuccessStatusCode)
+                {
+                    List<Doctor> doctores = await response.Content.ReadAsAsync<List<Doctor>>();
+                    return doctores;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

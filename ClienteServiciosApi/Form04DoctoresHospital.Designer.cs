@@ -59,6 +59,7 @@
             btnBuscarDoctores.TabIndex = 2;
             btnBuscarDoctores.Text = "Buscar doctores";
             btnBuscarDoctores.UseVisualStyleBackColor = true;
+            btnBuscarDoctores.Click += btnBuscarDoctores_Click;
             // 
             // label2
             // 
