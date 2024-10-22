@@ -81,5 +81,15 @@ namespace ClienteServiciosApi
             this.txtLocalidad.Text = "";
             await this.CargarDepartamentos();
         }
+
+        private async void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(this.txtNumero.Text);
+            await this.service.DeleteDepartamentoAsync(id);
+            this.txtNumero.Text = "";
+            this.txtNombre.Text = "";
+            this.txtLocalidad.Text = "";
+            await this.CargarDepartamentos();
+        }
     }
 }

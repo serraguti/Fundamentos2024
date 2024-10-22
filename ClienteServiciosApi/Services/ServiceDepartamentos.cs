@@ -118,11 +118,24 @@ namespace ClienteServiciosApi.Services
                 string json = JsonConvert.SerializeObject(departamento);
                 //DEBEMOS CREAR LA CLASE StringContent PARA ENVIAR LOS DATOS AL 
                 //SERVICIO (data)
-                StringContent content =
+                StringContent content = 
                     new StringContent(json, Encoding.UTF8, "application/json");
                 //REALIZAMOS LA LLAMADA Put ENVIANDO LA PETICION (request)
                 //Y EL OBJETO JSON
                 await client.PutAsync(request, content);
+            }
+        }
+
+        public async Task DeleteDepartamentoAsync(int id)
+        {
+            string request = "api/departamentos/" + id;
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(this.ApiURlDepartamentos);
+                client.DefaultRequestHeaders.Clear();
+                //PARA ELIMINAR, DEBEMOS REALIZAR UNA LLAMADA AL METODO
+                //DELETE DEL SERVICIO INDICANDO EL REQUEST
+                await client.DeleteAsync(request);
             }
         }
 
