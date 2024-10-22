@@ -138,6 +138,5 @@ namespace ClienteServiciosApi.Services
                 await client.DeleteAsync(request);
             }
         }
-
     }
 }
