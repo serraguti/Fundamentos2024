@@ -34,5 +34,16 @@ namespace ApiEjemplosMiercoles.Controllers
             lista.Add(persona3);
             return lista;
         }
+
+        [HttpGet]
+        [Route("[action]")]
+        public Persona GetPersona()
+        {
+            Persona persona = new Persona();
+            persona.Nombre = "Antonia";
+            persona.Apellidos = "Martinez";
+            persona.Edad = 74;
+            return persona;
+        }
     }
 }
