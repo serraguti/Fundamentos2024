@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreEF", "NetCoreEF\NetC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCoreEFFinal", "NetCoreEFFinal\NetCoreEFFinal.csproj", "{A6349FB0-16E3-48C3-ABDB-B5D027FB6827}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteServiciosApi", "ClienteServiciosApi\ClienteServiciosApi.csproj", "{C4D7A938-E694-4C92-B48B-DF47B3C5C43F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClienteServiciosApi", "ClienteServiciosApi\ClienteServiciosApi.csproj", "{C4D7A938-E694-4C92-B48B-DF47B3C5C43F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiEjemplosMiercoles", "ApiEjemplosMiercoles\ApiEjemplosMiercoles.csproj", "{A12717EE-3F63-4168-90EA-67FEA494B8AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{C4D7A938-E694-4C92-B48B-DF47B3C5C43F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4D7A938-E694-4C92-B48B-DF47B3C5C43F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4D7A938-E694-4C92-B48B-DF47B3C5C43F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A12717EE-3F63-4168-90EA-67FEA494B8AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A12717EE-3F63-4168-90EA-67FEA494B8AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A12717EE-3F63-4168-90EA-67FEA494B8AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A12717EE-3F63-4168-90EA-67FEA494B8AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
